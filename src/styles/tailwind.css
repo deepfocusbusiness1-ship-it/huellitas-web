@@ -1,9 +1,10 @@
+/* ─── Font Imports ─── */
+/* ⚠️ FIX: @import DEBE ir antes de las directivas @tailwind, si no las fuentes no cargan */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* ─── Font Imports ─── */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
 
 /* ─── CSS Variables ─── */
 :root {
@@ -92,11 +93,6 @@ h1, h2, h3 {
     opacity: 1;
     transform: scale(1);
   }
-}
-
-/* ─── Intersection Observer Classes ─── */
-.animate-on-scroll {
-  opacity: 1;
 }
 
 /* ─── Focus Styles (Accessibility) ─── */
