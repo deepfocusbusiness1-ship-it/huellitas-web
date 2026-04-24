@@ -7,13 +7,13 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+// ⚠️ FIX: título y descripción genéricos reemplazados por los reales del negocio
 export const metadata: Metadata = {
-  title: 'Next.js with Tailwind CSS',
-  description: 'A boilerplate project with Next.js and Tailwind CSS',
+  title: 'Huellitas Pets Shop | Nutrición Premium y Diseño Exclusivo — Santa Fe',
+  description:
+    'Tienda especializada en nutrición premium para mascotas: Royal Canin, Purina Pro Plan, Eukanuba y más. Camas, accesorios y ropa de temporada. Envío SIN CARGO en Santa Fe.',
   icons: {
-    icon: [
-      { url: '/assets/images/app_logo.png', type: 'image/x-icon' }
-    ],
+    icon: [{ url: '/assets/images/app_logo.png', type: 'image/x-icon' }],
   },
 };
 
@@ -22,10 +22,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // ⚠️ FIX: lang="en" → lang="es" (el sitio es en español)
   return (
-    <html lang="en">
-      <body>{children}
-</body>
+    <html lang="es">
+      <body>{children}</body>
     </html>
   );
 }
