@@ -1,5 +1,4 @@
 import React from "react";
-
 import AppLogo from "@/components/ui/AppLogo";
 
 export default function Footer() {
@@ -18,7 +17,13 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo + copyright */}
           <div className="flex items-center gap-4">
-            <AppLogo size={40} text="Huellitas" iconName="HeartIcon" />
+            {/* ⚠️ FIX: se pasa textStyle con color blanco para que el texto sea visible en footer oscuro */}
+            <AppLogo
+              size={40}
+              text="Huellitas"
+              iconName="HeartIcon"
+              textStyle={{ color: "rgba(255,255,255,0.7)", fontWeight: 600 }}
+            />
             <span
               className="font-medium"
               style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.8rem" }}
@@ -43,7 +48,8 @@ export default function Footer() {
                   (e.currentTarget as HTMLAnchorElement).style.color = "#f0c060";
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.35)";
+                  (e.currentTarget as HTMLAnchorElement).style.color =
+                    "rgba(255,255,255,0.35)";
                 }}
               >
                 {link.label}
@@ -66,12 +72,15 @@ export default function Footer() {
                 color: "rgba(255,255,255,0.4)",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = "#f0c060";
+                (e.currentTarget as HTMLAnchorElement).style.borderColor =
+                  "#f0c060";
                 (e.currentTarget as HTMLAnchorElement).style.color = "#f0c060";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.1)";
-                (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.4)";
+                (e.currentTarget as HTMLAnchorElement).style.borderColor =
+                  "rgba(255,255,255,0.1)";
+                (e.currentTarget as HTMLAnchorElement).style.color =
+                  "rgba(255,255,255,0.4)";
               }}
             >
               <InstagramIcon />
@@ -89,12 +98,15 @@ export default function Footer() {
                 color: "rgba(255,255,255,0.4)",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = "#25D366";
+                (e.currentTarget as HTMLAnchorElement).style.borderColor =
+                  "#25D366";
                 (e.currentTarget as HTMLAnchorElement).style.color = "#25D366";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.1)";
-                (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.4)";
+                (e.currentTarget as HTMLAnchorElement).style.borderColor =
+                  "rgba(255,255,255,0.1)";
+                (e.currentTarget as HTMLAnchorElement).style.color =
+                  "rgba(255,255,255,0.4)";
               }}
             >
               <WAIcon />
@@ -108,7 +120,16 @@ export default function Footer() {
 
 function InstagramIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
