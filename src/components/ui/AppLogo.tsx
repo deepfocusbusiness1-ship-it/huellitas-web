@@ -5,12 +5,13 @@ import AppIcon from './AppIcon';
 import AppImage from './AppImage';
 
 interface AppLogoProps {
-  src?: string; // Image source (optional)
-  text?: string; // Logo text (optional)
-  iconName?: string; // Icon name when no image
-  size?: number; // Size for icon/image
-  className?: string; // Additional classes
-  onClick?: () => void; // Click handler
+  src?: string;
+  text?: string;
+  iconName?: string;
+  size?: number;
+  className?: string;
+  textStyle?: React.CSSProperties;
+  onClick?: () => void;
 }
 
 const AppLogo = memo(function AppLogo({
@@ -19,9 +20,9 @@ const AppLogo = memo(function AppLogo({
   iconName = 'SparklesIcon',
   size = 64,
   className = '',
+  textStyle,
   onClick,
 }: AppLogoProps) {
-  // Memoize className calculation
   const containerClassName = useMemo(() => {
     const classes = ['flex items-center gap-2'];
     if (onClick) classes.push('cursor-pointer hover:opacity-80 transition-opacity');
@@ -31,13 +32,12 @@ const AppLogo = memo(function AppLogo({
 
   return (
     <div className={containerClassName} onClick={onClick}>
-      {/* Show image if src provided, otherwise show icon */}
       {src ? (
-        <AppImage 
-          src={src} 
-          alt="Logo" 
-          width={size} 
-          height={size} 
+        <AppImage
+          src={src}
+          alt="Logo"
+          width={size}
+          height={size}
           className="flex-shrink-0"
           priority={true}
           unoptimized={src.endsWith('.svg')}
@@ -46,10 +46,15 @@ const AppLogo = memo(function AppLogo({
         <AppIcon name={iconName} size={size} className="flex-shrink-0" />
       )}
 
-      {/* Show text if provided */}
-      {text && <span className="text-xl font-bold">{text}</span>}
+      {text && (
+        <span className="text-xl font-bold" style={textStyle}>
+          {text}
+        </span>
+      )}
     </div>
   );
 });
+
+AppLogo.displayName = 'AppLogo';
 
 export default AppLogo;
