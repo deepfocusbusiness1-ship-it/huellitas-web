@@ -1,0 +1,111 @@
+{
+    "brand": {
+        "name": "Huellitas Pets Shop",
+        "tagline": "Nutrici\u00f3n Premium y Dise\u00f1o Exclusivo",
+        "description": "Bienestar animal con Env\u00edo SIN CARGO en Santa Fe",
+        "phone": "5493425492412",
+        "whatsappMessage": "Hola%20Huellitas%2C%20vi%20su%20web%20y%20quer\u00eda%20hacer%20una%20consulta.",
+        "whatsappUrl": "https://wa.me/5493425492412?text=Hola%20Huellitas%2C%20vi%20su%20web%20y%20quer\u00eda%20hacer%20una%20consulta.",
+        "address": "San Mart\u00edn 2171, Local 26",
+        "city": "(3000) Santa Fe",
+        "paymentNote": "Aceptamos todos los medios de pago",
+        "instagram": "https://instagram.com/huellitaspetsshop",
+        "facebook": "https://facebook.com/huellitaspetsshop"
+    },
+    "hero": {
+        "image": "https://i.ibb.co/603v2CsX/Whats-App-Image-2026-03-06-at-03-43-56-1.jpg",
+        "imageAlt": "Interior del showroom Huellitas Pets Shop con productos premium para mascotas",
+        "headline": "Huellitas Pets Shop",
+        "subheadline": "Nutrici\u00f3n Premium y Dise\u00f1o Exclusivo",
+        "body": "Bienestar animal con Env\u00edo SIN CARGO en Santa Fe",
+        "cta": {
+            "primary": "Consultar por WhatsApp",
+            "secondary": "Ver Productos"
+        },
+        "badge": "Env\u00edo GRATIS en Santa Fe"
+    },
+    "stats": [
+        {
+            "value": "6+",
+            "label": "Marcas Premium"
+        },
+        {
+            "value": "100%",
+            "label": "Env\u00edo sin cargo en Santa Fe"
+        },
+        {
+            "value": "Todos",
+            "label": "Medios de pago"
+        },
+        {
+            "value": "Local",
+            "label": "En el coraz\u00f3n de Santa Fe"
+        }
+    ],
+    "products": [
+        {
+            "id": "nutricion",
+            "category": "Nutrici\u00f3n",
+            "title": "Alimentos Premium",
+            "description": "Las mejores marcas del mercado para garantizar la salud y vitalidad de tu mascota. Formulaciones cient\u00edficas adaptadas a cada etapa de vida.",
+            "image": "https://i.ibb.co/chSZKBKy/1772782912756.png",
+            "imageAlt": "Bolsas de alimentos premium para mascotas: Royal Canin, Purina Pro Plan y otras marcas",
+            "brands": [
+                "Royal Canin",
+                "Purina Pro Plan",
+                "Nutrique",
+                "Eukanuba",
+                "Agility",
+                "Sieger"
+            ],
+            "cta": "Consultar Stock"
+        },
+        {
+            "id": "descanso",
+            "category": "Descanso",
+            "title": "Camas e Igl\u00faes T\u00e9rmicos",
+            "description": "Dise\u00f1o exclusivo para el descanso de tu compa\u00f1ero. Camas e igl\u00faes con relleno t\u00e9rmico de alta densidad, lavables y con cubierta premium.",
+            "image": "https://i.ibb.co/DPdQtBjB/Whats-App-Image-2026-03-06-at-03-43-56-2.jpg",
+            "imageAlt": "Camas e igl\u00faes t\u00e9rmicos de dise\u00f1o exclusivo para perros y gatos",
+            "brands": [
+                "Dise\u00f1o Exclusivo",
+                "Confort T\u00e9rmico",
+                "Lavables",
+                "Alta Densidad"
+            ],
+            "cta": "Ver Modelos"
+        },
+        {
+            "id": "accesorios",
+            "category": "Moda y Paseo",
+            "title": "Pretales y Ropa de Temporada",
+            "description": "Pretales t\u00e9cnicos ergon\u00f3micos y ropa de temporada con los mejores materiales. Estilo y funcionalidad para cada salida con tu mascota.",
+            "image": "https://i.ibb.co/sdTFDwtZ/Whats-App-Image-2026-03-06-at-03-43-57.jpg",
+            "imageAlt": "Pretales t\u00e9cnicos y ropa de temporada para mascotas, accesorios de moda y paseo",
+            "brands": [
+                "Pretales T\u00e9cnicos",
+                "Ropa de Temporada",
+                "Correas",
+                "Accesorios"
+            ],
+            "cta": "Ver Colecci\u00f3n"
+        }
+    ],
+    "footer": {
+        "copyright": "\u00a9 2026 Huellitas Pets Shop \u2014 Santa Fe, Argentina",
+        "links": [
+            {
+                "label": "Inicio",
+                "href": "#inicio"
+            },
+            {
+                "label": "Productos",
+                "href": "#productos"
+            },
+            {
+                "label": "Ubicaci\u00f3n",
+                "href": "#ubicacion"
+            }
+        ]
+    }
+}

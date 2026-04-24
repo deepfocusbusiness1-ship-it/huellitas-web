@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Font Imports ─── */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+
+/* ─── CSS Variables ─── */
+:root {
+  --color-primary: #0e1a14;
+  --color-accent: #f0c060;
+  --color-green: #4a7c59;
+  --color-wa: #25D366;
+  --color-red: #e8523a;
+  --color-cream: #f7f5f0;
+  --color-white: #ffffff;
+  --font-heading: 'Fraunces', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --radius-xl: 2.5rem;
+  --radius-lg: 1.5rem;
+  --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─── Base Reset ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-cream);
+  color: var(--color-primary);
+  overflow-x: hidden;
+}
+
+/* ─── Typography ─── */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.03em;
+}
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(240, 192, 96, 0.4);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(240, 192, 96, 0.7);
+}
+
+/* ─── Text Selection ─── */
+::selection {
+  background: rgba(240, 192, 96, 0.3);
+  color: var(--color-primary);
+}
+
+/* ─── Scroll Animations ─── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ─── Intersection Observer Classes ─── */
+.animate-on-scroll {
+  opacity: 1;
+}
+
+/* ─── Focus Styles (Accessibility) ─── */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Responsive Images ─── */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ─── Utility: Glass Effect ─── */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ─── Utility: Dark Glass ─── */
+.glass-dark {
+  background: rgba(14, 26, 20, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
