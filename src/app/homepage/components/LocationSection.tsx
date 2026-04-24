@@ -21,8 +21,10 @@ export default function LocationSection() {
     return () => observer.disconnect();
   }, []);
 
+  // ⚠️ FIX: mapUrl estaba definida pero NUNCA se usaba — el mapa era un placeholder decorativo.
+  // Se reemplaza por un iframe real de Google Maps con la dirección correcta.
   const mapUrl =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3397.1!2d-60.7!3d-31.63!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zSHVlbGxpdGFzIFBldHM!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar";
+    "https://maps.google.com/maps?q=San+Mart%C3%ADn+2171%2C+Santa+Fe%2C+Argentina&output=embed&z=16";
 
   return (
     <section id="ubicacion" style={{ background: "#0e1a14" }} className="py-24 md:py-32">
@@ -30,7 +32,12 @@ export default function LocationSection() {
         <div
           ref={ref}
           className="loc-container grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"
-          style={{ opacity: 0, transform: "translateY(28px)", transition: "opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1)" }}
+          style={{
+            opacity: 0,
+            transform: "translateY(28px)",
+            transition:
+              "opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1)",
+          }}
         >
           {/* Left: Info */}
           <div className="space-y-10">
@@ -56,7 +63,8 @@ export default function LocationSection() {
                 </span>
               </h2>
               <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "1rem", lineHeight: 1.7 }}>
-                Encontrá todo lo que tu mascota necesita en nuestro local. Te asesoramos personalmente para elegir el mejor producto.
+                Encontrá todo lo que tu mascota necesita en nuestro local. Te asesoramos
+                personalmente para elegir el mejor producto.
               </p>
             </div>
 
@@ -95,11 +103,13 @@ export default function LocationSection() {
               }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
-                (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 36px rgba(37,211,102,0.4)";
+                (e.currentTarget as HTMLAnchorElement).style.boxShadow =
+                  "0 12px 36px rgba(37,211,102,0.4)";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
-                (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 28px rgba(37,211,102,0.3)";
+                (e.currentTarget as HTMLAnchorElement).style.boxShadow =
+                  "0 8px 28px rgba(37,211,102,0.3)";
               }}
             >
               <WhatsAppIconSmall />
@@ -107,62 +117,68 @@ export default function LocationSection() {
             </a>
           </div>
 
-          {/* Right: Map placeholder */}
+          {/* Right: Mapa real de Google Maps */}
+          {/* ⚠️ FIX: se reemplaza el placeholder decorativo por un iframe real */}
           <div
             className="rounded-3xl overflow-hidden"
             style={{
               height: "420px",
               border: "1px solid rgba(255,255,255,0.08)",
               position: "relative",
-              background: "#1a2d20",
             }}
           >
-            {/* Decorative map placeholder */}
+            <iframe
+              src={mapUrl}
+              width="100%"
+              height="100%"
+              style={{ border: 0, display: "block" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Ubicación de Huellitas Pets Shop — San Martín 2171, Santa Fe"
+            />
+            {/* Overlay con dirección sobre el mapa */}
             <div
-              className="w-full h-full flex flex-col items-center justify-center gap-4"
-              style={{ background: "#162218" }}
+              className="absolute bottom-0 left-0 right-0 flex items-center justify-between"
+              style={{
+                padding: "14px 18px",
+                background: "rgba(14,26,20,0.88)",
+                backdropFilter: "blur(10px)",
+              }}
             >
-              <div
-                className="w-16 h-16 rounded-full flex items-center justify-center text-3xl"
-                style={{ background: "rgba(240,192,96,0.15)", border: "2px solid rgba(240,192,96,0.3)" }}
-              >
-                📍
-              </div>
-              <div className="text-center">
+              <div>
                 <p
-                  className="font-black mb-1"
-                  style={{ color: "#f0c060", fontSize: "1.1rem", fontFamily: "'Fraunces', serif" }}
+                  className="font-black"
+                  style={{ color: "#f0c060", fontSize: "0.85rem", fontFamily: "'Fraunces', serif" }}
                 >
                   Huellitas Pets Shop
                 </p>
-                <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.875rem" }}>
-                  San Martín 2171, Local 26
-                </p>
-                <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.8rem" }}>
-                  (3000) Santa Fe, Argentina
+                <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.75rem" }}>
+                  San Martín 2171, Local 26 — Santa Fe
                 </p>
               </div>
               <a
                 href="https://maps.google.com/?q=San+Martín+2171+Santa+Fe+Argentina"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold rounded-full transition-all duration-300 mt-2"
+                className="font-bold rounded-full transition-all duration-300 flex-shrink-0"
                 style={{
-                  padding: "10px 24px",
-                  fontSize: "0.8rem",
+                  padding: "8px 18px",
+                  fontSize: "0.75rem",
                   background: "rgba(240,192,96,0.15)",
                   color: "#f0c060",
                   border: "1px solid rgba(240,192,96,0.3)",
-                  letterSpacing: "0.05em",
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.background = "rgba(240,192,96,0.25)";
+                  (e.currentTarget as HTMLAnchorElement).style.background =
+                    "rgba(240,192,96,0.25)";
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.background = "rgba(240,192,96,0.15)";
+                  (e.currentTarget as HTMLAnchorElement).style.background =
+                    "rgba(240,192,96,0.15)";
                 }}
               >
-                Ver en Google Maps →
+                Ver en Maps →
               </a>
             </div>
           </div>
@@ -193,7 +209,11 @@ function InfoCard({ icon, label, value }: { icon: string; label: string; value: 
       <div>
         <p
           className="font-bold uppercase tracking-widest mb-0.5"
-          style={{ fontSize: "0.6rem", color: "rgba(255,255,255,0.35)", letterSpacing: "0.2em" }}
+          style={{
+            fontSize: "0.6rem",
+            color: "rgba(255,255,255,0.35)",
+            letterSpacing: "0.2em",
+          }}
         >
           {label}
         </p>
