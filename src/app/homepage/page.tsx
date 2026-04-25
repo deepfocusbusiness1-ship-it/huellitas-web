@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "./components/HeroSection";
 import StatsSection from "./components/StatsSection";
+import BrandsSection from "./components/BrandsSection";
 import ProductsSection from "./components/ProductsSection";
 import LocationSection from "./components/LocationSection";
 import CtaBanner from "./components/CtaBanner";
@@ -14,13 +15,14 @@ export default function Homepage() {
     <main
       style={{
         fontFamily: "'Plus Jakarta Sans', 'DM Sans', sans-serif",
-        background: "#f7f5f0",
+        background: "#f5f0e8",
         overflowX: "hidden",
       }}
     >
       <Header />
       <HeroSection />
       <StatsSection />
+      <BrandsSection />
       <ProductsSection />
       <LocationSection />
       <CtaBanner />
