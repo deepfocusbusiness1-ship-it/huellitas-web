@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "./components/HeroSection";
 import StatsSection from "./components/StatsSection";
-import BrandsSection from "./components/BrandsSection";
+import BrandsSection from "@/components/BrandsSection";
 import ProductsSection from "./components/ProductsSection";
 import LocationSection from "./components/LocationSection";
 import CtaBanner from "./components/CtaBanner";
