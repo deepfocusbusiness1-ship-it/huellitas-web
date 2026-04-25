@@ -14,10 +14,10 @@ export default function Footer() {
       }}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Logo + copyright */}
-          <div className="flex items-center gap-4">
-            {/* ⚠️ FIX: se pasa textStyle con color blanco para que el texto sea visible en footer oscuro */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+          
+          {/* 1. Logo + copyright */}
+          <div className="flex flex-col items-center lg:items-start gap-2">
             <AppLogo
               size={40}
               text="Huellitas"
@@ -32,7 +32,20 @@ export default function Footer() {
             </span>
           </div>
 
-          {/* Links */}
+          {/* 2. NUEVA SECCIÓN: Horarios de Atención */}
+          <div className="flex flex-col items-center gap-1 text-center">
+            <div className="flex items-center gap-2" style={{ color: "#f0c060" }}>
+              <ClockIcon />
+              <span className="font-semibold uppercase tracking-wider" style={{ fontSize: "0.75rem" }}>
+                Horarios de Atención
+              </span>
+            </div>
+            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.85rem" }}>
+              Lunes a Sábado: 9:00 a 13:00 — 16:30 a 20:00 hs
+            </p>
+          </div>
+
+          {/* 3. Links */}
           <div className="flex items-center gap-6">
             {[
               { label: "Inicio", href: "#inicio" },
@@ -57,7 +70,7 @@ export default function Footer() {
             ))}
           </div>
 
-          {/* Social */}
+          {/* 4. Social */}
           <div className="flex items-center gap-3">
             <a
               href="https://instagram.com/huellitaspetsshop"
@@ -115,6 +128,26 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+// --- ICONOS ---
+
+function ClockIcon() {
+  return (
+    <svg 
+      width="16" 
+      height="16" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </svg>
   );
 }
 
