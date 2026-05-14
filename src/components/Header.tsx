@@ -7,6 +7,7 @@ import AppLogo from "@/components/ui/AppLogo";
 const navLinks = [
   { label: "Inicio", href: "#inicio" },
   { label: "Productos", href: "#productos" },
+  { label: "Catálogo", href: "/catalogo" },   // ← NUEVO
   { label: "Ubicación", href: "#ubicacion" },
 ];
 
@@ -23,12 +24,11 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ⚠️ FIX: función auxiliar limpia para las transformaciones del hamburger
   const getBarTransform = (index: number): string => {
     if (!menuOpen) return "none";
     if (index === 0) return "rotate(45deg) translate(5px, 5px)";
     if (index === 2) return "rotate(-45deg) translate(5px, -5px)";
-    return "none"; // barra del medio: se oculta con opacity, no con transform
+    return "none";
   };
 
   return (
@@ -53,7 +53,6 @@ export default function Header() {
         }}
       >
         {/* Logo */}
-        {/* ⚠️ FIX: se agrega color blanco al texto del logo para que sea visible sobre fondo oscuro */}
         <Link href="/homepage" className="flex items-center gap-3 group">
           <AppLogo
             size={48}
@@ -72,7 +71,9 @@ export default function Header() {
               className="font-semibold transition-colors duration-200"
               style={{
                 fontSize: "0.875rem",
-                color: "rgba(255,255,255,0.65)",
+                color: link.label === "Catálogo"
+                  ? "#c9912a"                    // dorado para destacarlo
+                  : "rgba(255,255,255,0.65)",
                 letterSpacing: "0.02em",
               }}
               onMouseEnter={(e) => {
@@ -80,7 +81,9 @@ export default function Header() {
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLAnchorElement).style.color =
-                  "rgba(255,255,255,0.65)";
+                  link.label === "Catálogo"
+                    ? "#c9912a"
+                    : "rgba(255,255,255,0.65)";
               }}
             >
               {link.label}
@@ -104,16 +107,12 @@ export default function Header() {
               boxShadow: "0 4px 16px rgba(37,211,102,0.3)",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.transform =
-                "translateY(-1px)";
-              (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-                "0 8px 24px rgba(37,211,102,0.4)";
+              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-1px)";
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 24px rgba(37,211,102,0.4)";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.transform =
-                "translateY(0)";
-              (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-                "0 4px 16px rgba(37,211,102,0.3)";
+              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 16px rgba(37,211,102,0.3)";
             }}
           >
             WhatsApp
@@ -132,8 +131,6 @@ export default function Header() {
                 className="block w-6 h-0.5 rounded transition-all duration-300"
                 style={{
                   background: "rgba(255,255,255,0.8)",
-                  // ⚠️ FIX: "opacity: 0" no es un valor de transform válido.
-                  // La barra del medio se oculta con opacity, las otras rotan correctamente.
                   transform: getBarTransform(i),
                   opacity: menuOpen && i === 1 ? 0 : 1,
                 }}
@@ -159,14 +156,21 @@ export default function Header() {
                 key={link.label}
                 href={link.href}
                 className="font-semibold px-8 py-4 transition-colors"
-                style={{ color: "rgba(255,255,255,0.7)", fontSize: "1rem" }}
+                style={{
+                  color: link.label === "Catálogo"
+                    ? "#c9912a"
+                    : "rgba(255,255,255,0.7)",
+                  fontSize: "1rem",
+                }}
                 onClick={() => setMenuOpen(false)}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLAnchorElement).style.color = "#f0c060";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLAnchorElement).style.color =
-                    "rgba(255,255,255,0.7)";
+                    link.label === "Catálogo"
+                      ? "#c9912a"
+                      : "rgba(255,255,255,0.7)";
                 }}
               >
                 {link.label}
