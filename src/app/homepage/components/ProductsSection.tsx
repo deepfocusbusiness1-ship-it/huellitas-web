@@ -3,6 +3,16 @@
 import React, { useEffect, useRef } from "react";
 import siteConfig from "../config/site.config.json";
 
+// ── Mapeo de producto → ruta del catálogo ──────────────────
+// "nutricion"  → /catalogo?categoria=perros  (alimentos)
+// "descanso"   → /catalogo?categoria=camas
+// "accesorios" → /catalogo?categoria=ropa
+const catalogoLinks: Record<string, string> = {
+  nutricion:   "/catalogo?categoria=perros",
+  descanso:    "/catalogo?categoria=camas",
+  accesorios:  "/catalogo?categoria=ropa",
+};
+
 export default function ProductsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -25,26 +35,15 @@ export default function ProductsSection() {
     return () => observer.disconnect();
   }, []);
 
-  const whatsappBase = siteConfig.brand.whatsappUrl;
-
   const cardBgs = ["#1a3d22", "#1e2e3a", "#2e1e1a"];
 
   return (
     <section id="productos" className="py-24 md:py-32" style={{ background: "#ede7d9" }}>
       <div className="max-w-7xl mx-auto px-6">
         {/* Section header */}
-        <div
-          className="mb-16 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-6"
-        >
+        <div className="mb-16 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "10px",
-                marginBottom: "16px",
-              }}
-            >
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
               <div style={{ width: "24px", height: "1px", background: "#c9952a" }} />
               <p
                 style={{
@@ -76,10 +75,9 @@ export default function ProductsSection() {
             </h2>
           </div>
 
+          {/* Botón "Ver catálogo completo" → va al catálogo sin filtro */}
           <a
-            href={whatsappBase}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/catalogo"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -105,18 +103,14 @@ export default function ProductsSection() {
               (e.currentTarget as HTMLAnchorElement).style.background = "#1a2e1e";
             }}
           >
-            Consultar todo →
+            Ver catálogo completo →
           </a>
         </div>
 
         {/* Products grid */}
         <div
           ref={sectionRef}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "2px",
-          }}
+          style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px" }}
           className="md:grid-cols-3 grid-cols-1"
         >
           {siteConfig.products.map((product, i) => (
@@ -143,7 +137,7 @@ export default function ProductsSection() {
                 if (overlay) overlay.style.opacity = "0";
               }}
             >
-              {/* Image with dark overlay */}
+              {/* Imagen */}
               <div style={{ height: "260px", overflow: "hidden", flexShrink: 0, position: "relative" }}>
                 <img
                   src={product.image}
@@ -172,16 +166,9 @@ export default function ProductsSection() {
                 }}
               />
 
-              {/* Content */}
-              <div
-                style={{
-                  padding: "28px 32px 32px",
-                  display: "flex",
-                  flexDirection: "column",
-                  flex: 1,
-                }}
-              >
-                {/* Category badge */}
+              {/* Contenido */}
+              <div style={{ padding: "28px 32px 32px", display: "flex", flexDirection: "column", flex: 1 }}>
+                {/* Badge categoría */}
                 <span
                   style={{
                     display: "inline-block",
@@ -225,7 +212,7 @@ export default function ProductsSection() {
                   {product.description}
                 </p>
 
-                {/* Brand tags */}
+                {/* Tags */}
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "24px" }}>
                   {product.brands.map((brand) => (
                     <span
@@ -245,11 +232,9 @@ export default function ProductsSection() {
                   ))}
                 </div>
 
-                {/* CTA */}
+                {/* ── CTA → catálogo filtrado ─────────────────── */}
                 <a
-                  href={whatsappBase}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={catalogoLinks[product.id] ?? "/catalogo"}
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
