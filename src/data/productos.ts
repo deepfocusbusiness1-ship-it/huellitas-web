@@ -276,4 +276,4 @@ export const opcionesEncargue = [
   "Buzo personalizado con foto o diseño",
   "Ropa de temporada por pedido especial",
   "Otro diseño (lo describís en el mensaje)",
-];
+]; 
