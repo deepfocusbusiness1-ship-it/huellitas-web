@@ -12,7 +12,7 @@ export interface Producto {
   categoria: Categoria;
   subcategoria?: string;
   descripcion: string;
-  imagen: string; // ruta relativa a /public/images/productos/
+  imagen: string; // ruta relativa a /public/assets/images/
   destacado?: boolean;
 }
 
