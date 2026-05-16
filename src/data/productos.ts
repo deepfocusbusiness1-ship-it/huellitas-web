@@ -48,7 +48,7 @@ export const productos: Producto[] = [
     categoria: "perros",
     subcategoria: "Nutrición",
     descripcion: "Alimento balanceado completo para perros adultos de razas medianas. Rico en proteínas y vitaminas esenciales.",
-    imagen: "/images/productos/excellent-adulto.jpg",
+    imagen: "/assets/images/excellent-adulto.jpg",
     destacado: true,
   },
   {
@@ -57,7 +57,7 @@ export const productos: Producto[] = [
     categoria: "perros",
     subcategoria: "Nutrición",
     descripcion: "Fórmula especial para cachorros en etapa de crecimiento. Calcio y fósforo para huesos fuertes.",
-    imagen: "/images/productos/excellent-cachorro.jpg",
+    imagen: "/assets/images/excellent-cachorro.jpg",
   },
   {
     id: 3,
@@ -65,7 +65,7 @@ export const productos: Producto[] = [
     categoria: "perros",
     subcategoria: "Nutrición",
     descripcion: "Nutrición premium con ingredientes naturales. Ideal para perros activos. Alta digestibilidad.",
-    imagen: "/images/productos/agility-adulto.jpg",
+    imagen: "/assets/images/agility-adulto.jpg",
     destacado: true,
   },
   {
@@ -74,7 +74,7 @@ export const productos: Producto[] = [
     categoria: "perros",
     subcategoria: "Nutrición",
     descripcion: "Desarrollo óptimo para cachorros. Con DHA para el desarrollo cerebral y visual.",
-    imagen: "/images/productos/agility-cachorro.jpg",
+    imagen: "/assets/images/agility-cachorro.jpg",
   },
   {
     id: 5,
@@ -82,7 +82,7 @@ export const productos: Producto[] = [
     categoria: "perros",
     subcategoria: "Nutrición",
     descripcion: "Fórmula avanzada Purina con pollo como primer ingrediente. Sistema inmunológico fuerte.",
-    imagen: "/images/productos/proplan-adulto.jpg",
+    imagen: "/assets/images/proplan-adulto.jpg",
     destacado: true,
   },
   {
@@ -91,7 +91,7 @@ export const productos: Producto[] = [
     categoria: "perros",
     subcategoria: "Nutrición",
     descripcion: "Diseñado para cachorros de razas grandes. Controla el crecimiento óseo saludable.",
-    imagen: "/images/productos/proplan-cachorro-grande.jpg",
+    imagen: "/assets/images/proplan-cachorro-grande.jpg",
   },
 
   // ALIMENTOS — GATOS
@@ -101,7 +101,7 @@ export const productos: Producto[] = [
     categoria: "gatos",
     subcategoria: "Nutrición",
     descripcion: "Alimento balanceado para gatos adultos. Con taurina para la salud cardíaca y visual.",
-    imagen: "/images/productos/excellent-gatos.jpg",
+    imagen: "/assets/images/excellent-gatos.jpg",
   },
   {
     id: 8,
@@ -109,7 +109,7 @@ export const productos: Producto[] = [
     categoria: "gatos",
     subcategoria: "Nutrición",
     descripcion: "Fórmula específica para gatos castrados. Controla el peso y cuida el tracto urinario.",
-    imagen: "/images/productos/proplan-gatos.jpg",
+    imagen: "/assets/images/proplan-gatos.jpg",
     destacado: true,
   },
 
@@ -119,14 +119,14 @@ export const productos: Producto[] = [
     nombre: "Pelota de goma resistente",
     categoria: "juguetes",
     descripcion: "Goma natural resistente a mordidas. Para perros de todas las razas. Flotan en el agua.",
-    imagen: "/images/productos/pelota-goma.jpg",
+    imagen: "/assets/images/pelota-goma.jpg",
   },
   {
     id: 10,
     nombre: "Mordedor de cuerda",
     categoria: "juguetes",
     descripcion: "Cuerda trenzada multicolor. Limpia los dientes mientras juega. Ideal para jugar a tirar.",
-    imagen: "/images/productos/mordedor-cuerda.jpg",
+    imagen: "/assets/images/mordedor-cuerda.jpg",
     destacado: true,
   },
   {
@@ -134,21 +134,21 @@ export const productos: Producto[] = [
     nombre: "Varita con plumas para gato",
     categoria: "juguetes",
     descripcion: "Varita interactiva con plumas naturales. Estimula el instinto cazador. Horas de diversión.",
-    imagen: "/images/productos/varita-plumas.jpg",
+    imagen: "/assets/images/varita-plumas.jpg",
   },
   {
     id: 12,
     nombre: "Pelotas con cascabel para gato",
     categoria: "juguetes",
     descripcion: "Pelotas livianas con sonido interior. Pack de 3 unidades en colores variados.",
-    imagen: "/images/productos/pelota-cascabel.jpg",
+    imagen: "/assets/images/pelota-cascabel.jpg",
   },
   {
     id: 13,
     nombre: "Kong relleable",
     categoria: "juguetes",
     descripcion: "Juguete de goma que se rellena con premios. Mantiene al perro entretenido por horas.",
-    imagen: "/images/productos/kong.jpg",
+    imagen: "/assets/images/kong.jpg",
   },
 
   // CAMAS E IGLÚES
@@ -157,7 +157,7 @@ export const productos: Producto[] = [
     nombre: "Iglú térmico pequeño",
     categoria: "camas",
     descripcion: "Relleno térmico de alta densidad, lavable. Cubierta premium suave. Para mascotas pequeñas.",
-    imagen: "/images/productos/iglu-chico.jpg",
+    imagen: "/assets/images/iglu-chico.jpg",
     destacado: true,
   },
   {
@@ -165,21 +165,21 @@ export const productos: Producto[] = [
     nombre: "Cama redonda para gato",
     categoria: "camas",
     descripcion: "Cama tipo nido con bordes altos. El gato se siente seguro y abrigado. Relleno antialérgico.",
-    imagen: "/images/productos/cama-gato.jpg",
+    imagen: "/assets/images/cama-gato.jpg",
   },
   {
     id: 16,
     nombre: "Cama rectangular grande",
     categoria: "camas",
     descripcion: "Para perros grandes. Base firme con acolchado de alta densidad. Funda removible y lavable.",
-    imagen: "/images/productos/cama-grande.jpg",
+    imagen: "/assets/images/cama-grande.jpg",
   },
   {
     id: 17,
     nombre: "Iglú térmico mediano",
     categoria: "camas",
     descripcion: "Diseño exclusivo con relleno térmico premium. Cubierta lavable. Para perros medianos.",
-    imagen: "/images/productos/iglu-mediano.jpg",
+    imagen: "/assets/images/iglu-mediano.jpg",
   },
 
   // ROPA
@@ -188,7 +188,7 @@ export const productos: Producto[] = [
     nombre: "Campera polar abrigada",
     categoria: "ropa",
     descripcion: "Abrigo de polar suave para los días fríos de Santa Fe. Disponible en varios talles.",
-    imagen: "/images/productos/campera-polar.jpg",
+    imagen: "/assets/images/campera-polar.jpg",
     destacado: true,
   },
   {
@@ -196,14 +196,14 @@ export const productos: Producto[] = [
     nombre: "Buzo con capucha",
     categoria: "ropa",
     descripcion: "Cómodo y abrigado con capucha. Apertura inferior para hembras. Varios colores disponibles.",
-    imagen: "/images/productos/buzo-capucha.jpg",
+    imagen: "/assets/images/buzo-capucha.jpg",
   },
   {
     id: 20,
     nombre: "Impermeable para lluvia",
     categoria: "ropa",
     descripcion: "Capa liviana con capucha. Tu mascota sale al paseo sin mojarse. Cierre velcro fácil.",
-    imagen: "/images/productos/impermeable.jpg",
+    imagen: "/assets/images/impermeable.jpg",
   },
 ];
 
