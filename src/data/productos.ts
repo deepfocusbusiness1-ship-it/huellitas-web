@@ -4,7 +4,14 @@
 // No necesitás tocar ningún otro archivo de diseño.
 // ============================================================
 
-export type Categoria = "perros" | "gatos" | "juguetes" | "camas" | "ropa";
+export type Categoria =
+  | "perros"
+  | "gatos"
+  | "juguetes"
+  | "camas"
+  | "ropa"
+  | "accesorios"
+  | "higiene";
 
 export interface Producto {
   id: number;
@@ -150,6 +157,14 @@ export const productos: Producto[] = [
     descripcion: "Juguete de goma que se rellena con premios. Mantiene al perro entretenido por horas.",
     imagen: "/assets/images/kong.jpg",
   },
+  {
+    id: 21,
+    nombre: "Rascador para gato",
+    categoria: "juguetes",
+    descripcion: "Rascador de sisal natural con plataforma. Cuida las garras y entretiene. Base antideslizante.",
+    imagen: "/assets/images/rascador-gato.jpg",
+    destacado: true,
+  },
 
   // CAMAS E IGLÚES
   {
@@ -204,6 +219,52 @@ export const productos: Producto[] = [
     categoria: "ropa",
     descripcion: "Capa liviana con capucha. Tu mascota sale al paseo sin mojarse. Cierre velcro fácil.",
     imagen: "/assets/images/impermeable.jpg",
+  },
+  {
+    id: 22,
+    nombre: "Sweater Argentina hipoalergénico",
+    categoria: "ropa",
+    subcategoria: "Edición especial",
+    descripcion: "Sweater con los colores de la Selección Argentina. Tela hipoalergénica, ideal para pieles sensibles. Disponible en varios talles.",
+    imagen: "/assets/images/sweater-argentina.jpg",
+    destacado: true,
+  },
+
+  // ACCESORIOS
+  {
+    id: 23,
+    nombre: "Mochila para trasladar mascotas",
+    categoria: "accesorios",
+    descripcion: "Mochila resistente con ventilación y ventana. Cómoda para el dueño y segura para la mascota. Apta para perros y gatos.",
+    imagen: "/assets/images/mochila-traslado.jpg",
+    destacado: true,
+  },
+
+  // HIGIENE
+  {
+    id: 24,
+    nombre: "Shampoo para perros",
+    categoria: "higiene",
+    subcategoria: "Baño",
+    descripcion: "Shampoo suave con pH balanceado para la piel del perro. Deja el pelaje brillante y sin irritaciones.",
+    imagen: "/assets/images/shampoo-perros.jpg",
+  },
+  {
+    id: 25,
+    nombre: "Shampoo para gatos",
+    categoria: "higiene",
+    subcategoria: "Baño",
+    descripcion: "Fórmula especial para gatos. Sin fragancia agresiva, respeta la sensibilidad felina. Fácil enjuague.",
+    imagen: "/assets/images/shampoo-gatos.jpg",
+  },
+  {
+    id: 26,
+    nombre: "Piedras higiénicas para gato",
+    categoria: "higiene",
+    subcategoria: "Sanitario",
+    descripcion: "Arena aglomerante de alta absorción. Neutraliza olores al instante. Bajo nivel de polvo.",
+    imagen: "/assets/images/piedras-higienicas.jpg",
+    destacado: true,
   },
 ];
 
