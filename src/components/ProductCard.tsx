@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { whatsappProducto, type Producto } from "@/data/productos";
 
 // Paleta Huellitas
@@ -32,17 +31,13 @@ export default function ProductCard({ producto }: ProductCardProps) {
     >
       {/* Imagen */}
       <div
-        className="relative w-full h-48 overflow-hidden"
-        style={{ background: "#f0ebe3" }}
+        className="relative w-full overflow-hidden"
+        style={{ height: "192px", background: "#f0ebe3" }}
       >
-        <Image
+        <img
           src={producto.imagen}
           alt={producto.nombre}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
-          onError={(e) => {
-            (e.target as HTMLImageElement).src = "/images/placeholder-producto.png";
-          }}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
 
         {/* Badge subcategoría */}
@@ -88,16 +83,13 @@ export default function ProductCard({ producto }: ProductCardProps) {
           <span>🚚</span> Envío sin cargo en Santa Fe Capital
         </p>
 
-        {/* Botón WhatsApp — estilo dorado como la web */}
+        {/* Botón WhatsApp */}
         <a
           href={whatsappProducto(producto.nombre)}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-1 flex items-center justify-center gap-2 font-bold text-sm py-3 px-4 rounded-xl tracking-wide transition-all duration-200 uppercase"
-          style={{
-            background: "#c9912a",
-            color: "#1c3a2f",
-          }}
+          style={{ background: "#c9912a", color: "#1c3a2f" }}
           onMouseEnter={(e) => {
             (e.currentTarget as HTMLAnchorElement).style.background = "#b8801f";
           }}
