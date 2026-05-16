@@ -84,4 +84,4 @@ export default function CatalogoPage() {
       </section>
     </main>
   );
-}// v2
+}// v2 
