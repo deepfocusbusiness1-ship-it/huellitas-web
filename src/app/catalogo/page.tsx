@@ -1,8 +1,8 @@
 "use client";
-
 import { useState } from "react";
 import { productos, type Categoria } from "@/data/productos";
 import ProductCard from "@/components/ProductCard";
+import EncarguesRopa from "@/components/EncarguesRopa";
 
 const FILTROS: { valor: Categoria | "todos"; etiqueta: string; emoji: string }[] = [
   { valor: "todos",      etiqueta: "Todos",      emoji: "🐾" },
@@ -22,6 +22,8 @@ export default function CatalogoPage() {
     filtroActivo === "todos"
       ? productos
       : productos.filter((p) => p.categoria === filtroActivo);
+
+  const mostrarEncargues = filtroActivo === "ropa" || filtroActivo === "todos";
 
   return (
     <main className="min-h-screen" style={{ background: "#f0ebe3" }}>
@@ -82,6 +84,13 @@ export default function CatalogoPage() {
           </div>
         )}
       </section>
+
+      {/* Encargues de ropa — aparece en "Ropa" y en "Todos" */}
+      {mostrarEncargues && (
+        <section className="max-w-6xl mx-auto px-4 pb-16">
+          <EncarguesRopa />
+        </section>
+      )}
     </main>
   );
-}// v2 
+}
