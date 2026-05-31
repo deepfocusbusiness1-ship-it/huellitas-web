@@ -239,6 +239,15 @@ export const productos: Producto[] = [
     imagen: "/assets/images/mochila-traslado.jpg",
     destacado: true,
   },
+  {
+    id: 27,
+    nombre: "Collar Selección Argentina",
+    categoria: "accesorios",
+    subcategoria: "Edición especial",
+    descripcion: "Collar sublimado con el diseño de la bandera argentina. Sol de Mayo bordado, hebilla y argolla metálica. Disponible en varios talles.",
+    imagen: "/assets/images/collar-argentina.jpg",
+    destacado: true,
+  },
 
   // HIGIENE
   {
@@ -276,4 +285,4 @@ export const opcionesEncargue = [
   "Buzo personalizado con foto o diseño",
   "Ropa de temporada por pedido especial",
   "Otro diseño (lo describís en el mensaje)",
-]; 
+];
