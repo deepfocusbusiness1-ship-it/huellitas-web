@@ -314,6 +314,14 @@ export const productos: Producto[] = [
     imagen: "/assets/images/alfombra-beagle.jpg",
     destacado: true
   },
+  {
+    id: 33,
+    nombre: "Cama Selección Argentina N° 10",
+    categoria: "camas",
+    descripcion: "Cuna térmica súper acolchada con diseño de la Selección Argentina. Tela de alta calidad con rayas celestes y blancas, estampados 'ARG' y el número 10, bordes de jean azul oscuro y vivos amarillos.",
+    imagen: "/assets/images/cama-argentina-10.jpg",
+    destacado: true
+  },
 ];
 
 // ── Opciones de encargue de ropa personalizada ─────────────
