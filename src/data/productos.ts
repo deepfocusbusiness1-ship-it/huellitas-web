@@ -275,6 +275,45 @@ export const productos: Producto[] = [
     imagen: "/assets/images/piedras-higienicas.jpg",
     destacado: true,
   },
+  {
+    id: 28,
+    nombre: "Cortador de uñas 3 en 1 con luz LED",
+    categoria: "higiene",
+    subcategoria: "Cuidado",
+    descripcion: "Alicate ergonómico con corte preciso y seguro para mantener las uñas de tu mascota saludables sin dañar su sensibilidad.",
+    imagen: "/assets/images/alicate-unas-3en1.jpg"
+  },
+  {
+    id: 29,
+    nombre: "Juguete rodillo dispensador de alimento",
+    categoria: "juguetes",
+    descripcion: "Estimula la mente de tu mascota con este dispensador interactivo que libera premios mientras rueda. Diseño divertido de oso.",
+    imagen: "/assets/images/juguete-dispensador-comida.jpg"
+  },
+  {
+    id: 30,
+    nombre: "Botella de agua portátil AutoDogMug",
+    categoria: "accesorios",
+    descripcion: "Práctica botella portátil de 500ml con plato integrado. Presiona para llenar el plato y tu mascota beberá cómodamente durante el paseo.",
+    imagen: "/assets/images/botella-portatil-autodogmug.jpg",
+    destacado: true
+  },
+  {
+    id: 31,
+    nombre: "Buzo de corderito Bear con capucha",
+    categoria: "ropa",
+    descripcion: "Buzo extra suave y abrigado confeccionado en polar corderito premium con capucha y tierno bordado de oso. Varios talles.",
+    imagen: "/assets/images/buzo-bear-corderito.jpg",
+    destacado: true
+  },
+  {
+    id: 32,
+    nombre: "Alfombra acolchada Beagle durmiendo",
+    categoria: "camas",
+    descripcion: "Original colchoneta térmica con diseño realista de un Beagle descansando. Muy suave, ideal para colocar en el suelo o sobre su cama.",
+    imagen: "/assets/images/alfombra-beagle.jpg",
+    destacado: true
+  },
 ];
 
 // ── Opciones de encargue de ropa personalizada ─────────────
