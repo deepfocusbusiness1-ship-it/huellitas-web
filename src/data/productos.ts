@@ -327,7 +327,7 @@ export const productos: Producto[] = [
     nombre: "Enterito Jardinero de Corderoy 'Bear'",
     categoria: "ropa",
     descripcion: "Enterito jardinero súper cómodo confeccionado en corderoy verde oliva con bolsillo delantero marrón y un tierno parche de oso. Ideal para lucir canchero y abrigado en días frescos.",
-    imagen: "/assets/images/jardinero-corderoy.jpg"
+    imagen: "/assets/images/jardinero-corderoy.png"
   },
   {
     id: 35,
