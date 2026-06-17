@@ -322,6 +322,21 @@ export const productos: Producto[] = [
     imagen: "/assets/images/cama-argentina-10.jpg",
     destacado: true
   },
+  {
+    id: 34,
+    nombre: "Enterito Jardinero de Corderoy 'Bear'",
+    categoria: "ropa",
+    descripcion: "Enterito jardinero súper cómodo confeccionado en corderoy verde oliva con bolsillo delantero marrón y un tierno parche de oso. Ideal para lucir canchero y abrigado en días frescos.",
+    imagen: "/assets/images/jardinero-corderoy.jpg"
+  },
+  {
+    id: 35,
+    nombre: "Bombacha Higiénica Reutilizable para Celos",
+    categoria: "higiene",
+    subcategoria: "Cuidado",
+    descripcion: "Diseñada especialmente para brindar confort y protección a perritas en período de celo, incontinencia o viajes. Confeccionada con tela suave y respirable, posee bolsillo interno de malla para colocar los protectores, abertura para la cola y práctico ajuste con abrojos. Incluye 2 protectores absorbentes reutilizables.",
+    imagen: "/assets/images/bombacha-higienica.png"
+  },
 ];
 
 // ── Opciones de encargue de ropa personalizada ─────────────
