@@ -82,33 +82,6 @@ export const productos: Producto[] = [
     destacado: true,
   },
   {
-    id: 102,
-    nombre: "Livra Perros Adultos Minis y Pequeños",
-    categoria: "perros",
-    subcategoria: "Nutrición Premium",
-    descripcion:
-      "Nutrición balanceada 30% proteína. Pollo & cordero, arroz integral, batata, arvejas y huevo. Favorece la salud digestiva y el control de peso.",
-    imagen: "/assets/images/livra-adultos-minis.webp",
-  },
-  {
-    id: 103,
-    nombre: "Livra Perros Cachorros Todos los Tamaños",
-    categoria: "perros",
-    subcategoria: "Nutrición Premium",
-    descripcion:
-      "Fórmula 32% proteína ideal para el desarrollo óptimo del cachorro. Desarrollo cognitivo, salud digestiva y funcionalidad.",
-    imagen: "/assets/images/livra-cachorros.jpeg",
-  },
-  {
-    id: 104,
-    nombre: "Livra Perros Adultos Medianos y Grandes",
-    categoria: "perros",
-    subcategoria: "Nutrición Premium",
-    descripcion:
-      "Alimentación consciente 28% proteína. Croquetas adaptadas para razas medianas y grandes, con ingredientes de máxima calidad.",
-    imagen: "/assets/images/livra-adultos-medianos.webp",
-  },
-  {
     id: 1,
     nombre: "Excellent Adultos Razas Medianas",
     categoria: "perros",
