@@ -59,6 +59,15 @@ export function whatsappGeneral(): string {
 export const productos: Producto[] = [
   // ALIMENTOS — PERROS
   {
+    id: 106,
+    nombre: "Yenú Adultos Alimento Balanceado Completo",
+    categoria: "perros",
+    subcategoria: "Nutrición",
+    descripcion:
+      "Alimento balanceado completo de origen nacional para perros adultos de todas las razas. Formulado para brindar nutrición equilibrada, salud digestiva y energía diaria.",
+    imagen: "/assets/images/yenu-adultos.jpg",
+  },
+  {
     id: 105,
     nombre: "Royal Canin Health Nutrition Perros",
     categoria: "perros",
