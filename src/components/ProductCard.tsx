@@ -70,13 +70,13 @@ export default function ProductCard({ producto }: ProductCardProps) {
     >
       {/* Imagen + Galería */}
       <div
-        className="relative w-full overflow-hidden select-none"
-        style={{ height: "220px", background: "#f0ebe3" }}
+        className="relative w-full overflow-hidden select-none flex items-center justify-center"
+        style={{ height: "220px", background: "#f8f5f0" }}
       >
         <img
           src={currentUrl}
           alt={producto.nombre}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-contain p-3 group-hover:scale-105 transition-transform duration-500"
         />
 
         {/* Flecha Izquierda */}
