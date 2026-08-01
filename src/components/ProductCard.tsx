@@ -40,6 +40,11 @@ export default function ProductCard({ producto }: ProductCardProps) {
       ? currentItem.etiqueta || currentItem.nombre
       : null;
 
+  const currentDesc =
+    typeof currentItem === "object" && currentItem.descripcion
+      ? currentItem.descripcion
+      : producto.descripcion;
+
   const hasMultiple = listaImagenes.length > 1;
 
   const handlePrev = (e: React.MouseEvent) => {
@@ -195,10 +200,10 @@ export default function ProductCard({ producto }: ProductCardProps) {
         )}
 
         <p
-          className="text-sm leading-relaxed flex-1"
+          className="text-sm leading-relaxed flex-1 transition-all duration-300"
           style={{ color: "#5a6e65" }}
         >
-          {producto.descripcion}
+          {currentDesc}
         </p>
 
         {/* Envío sin cargo */}

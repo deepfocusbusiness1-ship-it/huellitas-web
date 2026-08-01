@@ -17,6 +17,7 @@ export interface VarianteImagen {
   url: string;
   etiqueta?: string;
   nombre?: string;
+  descripcion?: string;
 }
 
 export interface Producto {
@@ -58,6 +59,36 @@ export function whatsappGeneral(): string {
 export const productos: Producto[] = [
   // ALIMENTOS — PERROS
   {
+    id: 105,
+    nombre: "Royal Canin Health Nutrition Perros",
+    categoria: "perros",
+    subcategoria: "Super Premium",
+    descripcion:
+      "Nutrición de alta precisión adaptada a la talla, edad y necesidades específicas de tu perro.",
+    imagen: "/assets/images/royal-canin-mini-adult.jpg",
+    imagenes: [
+      {
+        url: "/assets/images/royal-canin-mini-adult.jpg",
+        etiqueta: "Mini Adult 8+ (Perros Pequeños)",
+        descripcion:
+          "Nutrición especial para perros de talla pequeña (hasta 10 kg) a partir de los 8 años. Mantenimiento del peso ideal y soporte para preservar la vitalidad en su madurez.",
+      },
+      {
+        url: "/assets/images/royal-canin-medium-adult.jpg",
+        etiqueta: "Medium Adult (Perros Medianos)",
+        descripcion:
+          "Fórmula para perros adultos de razas medianas (11 a 25 kg) mayores de 12 meses. Refuerza defensas naturales, alta digestibilidad y enriquecido con Omega 3 (EPA-DHA).",
+      },
+      {
+        url: "/assets/images/royal-canin-maxi-adult.jpg",
+        etiqueta: "Maxi Adult (Perros Grandes)",
+        descripcion:
+          "Alimento completo para perros de talla grande (26 a 44 kg) de 15 meses a 5 años. Soporte osteoarticular para cuidar sus articulaciones y máxima digestibilidad.",
+      },
+    ],
+    destacado: true,
+  },
+  {
     id: 101,
     nombre: "Livra Equilibrio Nutricional Perros",
     categoria: "perros",
@@ -69,14 +100,20 @@ export const productos: Producto[] = [
       {
         url: "/assets/images/livra-adultos-minis.webp",
         etiqueta: "Adultos Minis y Pequeños (30% Proteína)",
+        descripcion:
+          "Nutrición balanceada 30% proteína. Pollo & cordero, arroz integral, batata, arvejas y huevo. Favorece la salud digestiva y el control de peso.",
       },
       {
         url: "/assets/images/livra-cachorros.jpeg",
         etiqueta: "Cachorros Todos los Tamaños (32% Proteína)",
+        descripcion:
+          "Fórmula 32% proteína ideal para el desarrollo óptimo del cachorro. Desarrollo cognitivo, salud digestiva y funcionalidad.",
       },
       {
         url: "/assets/images/livra-adultos-medianos.webp",
         etiqueta: "Adultos Medianos y Grandes (28% Proteína)",
+        descripcion:
+          "Alimentación consciente 28% proteína. Croquetas adaptadas para razas medianas y grandes, con ingredientes de máxima calidad.",
       },
     ],
     destacado: true,
