@@ -15,14 +15,18 @@ export default function LocationSection() {
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="ubicacion" style={{ background: "#f5f0e8" }} className="py-24 md:py-32">
+    <section
+      id="ubicacion"
+      style={{ background: "#f5f0e8" }}
+      className="py-24 md:py-32"
+    >
       <div className="max-w-7xl mx-auto px-6">
         <div
           ref={ref}
@@ -45,7 +49,9 @@ export default function LocationSection() {
                 marginBottom: "20px",
               }}
             >
-              <div style={{ width: "24px", height: "1px", background: "#c9952a" }} />
+              <div
+                style={{ width: "24px", height: "1px", background: "#c9952a" }}
+              />
               <p
                 style={{
                   fontSize: "0.65rem",
@@ -72,7 +78,13 @@ export default function LocationSection() {
             >
               Visitanos en
               <br />
-              <span style={{ color: "#c9952a", fontStyle: "italic", fontWeight: 400 }}>
+              <span
+                style={{
+                  color: "#c9952a",
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                }}
+              >
                 Santa Fe.
               </span>
             </h2>
@@ -87,12 +99,19 @@ export default function LocationSection() {
                 fontWeight: 300,
               }}
             >
-              Encontrá todo lo que tu mascota necesita en nuestro local. Te asesoramos
-              personalmente para elegir el mejor producto.
+              Encontrá todo lo que tu mascota necesita en nuestro local. Te
+              asesoramos personalmente para elegir el mejor producto.
             </p>
 
             {/* Info cards */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginBottom: "40px" }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "2px",
+                marginBottom: "40px",
+              }}
+            >
               <InfoCard
                 icon={<PinIcon />}
                 label="Dirección"
@@ -132,12 +151,16 @@ export default function LocationSection() {
                 transition: "all 0.25s",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.background = "#2d4433";
-                (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-1px)";
+                (e.currentTarget as HTMLAnchorElement).style.background =
+                  "#2d4433";
+                (e.currentTarget as HTMLAnchorElement).style.transform =
+                  "translateY(-1px)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.background = "#1a2e1e";
-                (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
+                (e.currentTarget as HTMLAnchorElement).style.background =
+                  "#1a2e1e";
+                (e.currentTarget as HTMLAnchorElement).style.transform =
+                  "translateY(0)";
               }}
             >
               <WhatsAppIconSmall />
@@ -193,7 +216,9 @@ export default function LocationSection() {
               <span style={{ fontSize: "28px" }}>📍</span>
             </div>
 
-            <div style={{ textAlign: "center", position: "relative", zIndex: 1 }}>
+            <div
+              style={{ textAlign: "center", position: "relative", zIndex: 1 }}
+            >
               <p
                 style={{
                   fontFamily: "'Fraunces', serif",
@@ -205,10 +230,21 @@ export default function LocationSection() {
               >
                 Huellitas Pets Shop
               </p>
-              <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.875rem" }}>
+              <p
+                style={{
+                  color: "rgba(255,255,255,0.45)",
+                  fontSize: "0.875rem",
+                }}
+              >
                 San Martín 2171, Local 26
               </p>
-              <p style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.8rem", marginTop: "2px" }}>
+              <p
+                style={{
+                  color: "rgba(255,255,255,0.3)",
+                  fontSize: "0.8rem",
+                  marginTop: "2px",
+                }}
+              >
                 (3000) Santa Fe, Argentina
               </p>
             </div>
@@ -233,12 +269,16 @@ export default function LocationSection() {
                 zIndex: 1,
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = "#c9952a";
-                (e.currentTarget as HTMLAnchorElement).style.background = "rgba(201,149,42,0.1)";
+                (e.currentTarget as HTMLAnchorElement).style.borderColor =
+                  "#c9952a";
+                (e.currentTarget as HTMLAnchorElement).style.background =
+                  "rgba(201,149,42,0.1)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(201,149,42,0.4)";
-                (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
+                (e.currentTarget as HTMLAnchorElement).style.borderColor =
+                  "rgba(201,149,42,0.4)";
+                (e.currentTarget as HTMLAnchorElement).style.background =
+                  "transparent";
               }}
             >
               Ver en Google Maps →
@@ -304,7 +344,9 @@ function InfoCard({
         >
           {label}
         </p>
-        <p style={{ color: "#1a1a1a", fontSize: "0.9rem", fontWeight: 400 }}>{value}</p>
+        <p style={{ color: "#1a1a1a", fontSize: "0.9rem", fontWeight: 400 }}>
+          {value}
+        </p>
       </div>
     </div>
   );

@@ -8,16 +8,17 @@ import siteConfig from "../config/site.config.json";
 // "descanso"   → /catalogo?categoria=camas
 // "accesorios" → /catalogo?categoria=ropa
 const catalogoLinks: Record<string, string> = {
-  nutricion:   "/catalogo?categoria=perros",
-  descanso:    "/catalogo?categoria=camas",
-  accesorios:  "/catalogo?categoria=ropa",
+  nutricion: "/catalogo?categoria=perros",
+  descanso: "/catalogo?categoria=camas",
+  accesorios: "/catalogo?categoria=ropa",
 };
 
 export default function ProductsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const cards = sectionRef.current?.querySelectorAll<HTMLDivElement>(".product-card");
+    const cards =
+      sectionRef.current?.querySelectorAll<HTMLDivElement>(".product-card");
     if (!cards) return;
 
     const observer = new IntersectionObserver(
@@ -28,7 +29,7 @@ export default function ProductsSection() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     cards.forEach((card) => observer.observe(card));
@@ -38,13 +39,26 @@ export default function ProductsSection() {
   const cardBgs = ["#1a3d22", "#1e2e3a", "#2e1e1a"];
 
   return (
-    <section id="productos" className="py-24 md:py-32" style={{ background: "#ede7d9" }}>
+    <section
+      id="productos"
+      className="py-24 md:py-32"
+      style={{ background: "#ede7d9" }}
+    >
       <div className="max-w-7xl mx-auto px-6">
         {/* Section header */}
         <div className="mb-16 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-              <div style={{ width: "24px", height: "1px", background: "#c9952a" }} />
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                marginBottom: "16px",
+              }}
+            >
+              <div
+                style={{ width: "24px", height: "1px", background: "#c9952a" }}
+              />
               <p
                 style={{
                   fontSize: "0.65rem",
@@ -69,7 +83,13 @@ export default function ProductsSection() {
             >
               Todo para el bienestar
               <br />
-              <span style={{ fontStyle: "italic", color: "#c9952a", fontWeight: 400 }}>
+              <span
+                style={{
+                  fontStyle: "italic",
+                  color: "#c9952a",
+                  fontWeight: 400,
+                }}
+              >
                 de tu mascota.
               </span>
             </h2>
@@ -97,10 +117,12 @@ export default function ProductsSection() {
               flexShrink: 0,
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.background = "#2d4433";
+              (e.currentTarget as HTMLAnchorElement).style.background =
+                "#2d4433";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.background = "#1a2e1e";
+              (e.currentTarget as HTMLAnchorElement).style.background =
+                "#1a2e1e";
             }}
           >
             Ver catálogo completo →
@@ -110,7 +132,11 @@ export default function ProductsSection() {
         {/* Products grid */}
         <div
           ref={sectionRef}
-          style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px" }}
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "2px",
+          }}
           className="md:grid-cols-3 grid-cols-1"
         >
           {siteConfig.products.map((product, i) => (
@@ -129,26 +155,43 @@ export default function ProductsSection() {
                 cursor: "pointer",
               }}
               onMouseEnter={(e) => {
-                const overlay = e.currentTarget.querySelector(".card-overlay") as HTMLElement;
+                const overlay = e.currentTarget.querySelector(
+                  ".card-overlay",
+                ) as HTMLElement;
                 if (overlay) overlay.style.opacity = "1";
               }}
               onMouseLeave={(e) => {
-                const overlay = e.currentTarget.querySelector(".card-overlay") as HTMLElement;
+                const overlay = e.currentTarget.querySelector(
+                  ".card-overlay",
+                ) as HTMLElement;
                 if (overlay) overlay.style.opacity = "0";
               }}
             >
               {/* Imagen */}
-              <div style={{ height: "260px", overflow: "hidden", flexShrink: 0, position: "relative" }}>
+              <div
+                style={{
+                  height: "260px",
+                  overflow: "hidden",
+                  flexShrink: 0,
+                  position: "relative",
+                }}
+              >
                 <img
                   src={product.image}
                   alt={product.imageAlt}
                   className="w-full h-full object-cover"
-                  style={{ display: "block", filter: "brightness(0.55)", transition: "transform 0.6s ease" }}
+                  style={{
+                    display: "block",
+                    filter: "brightness(0.55)",
+                    transition: "transform 0.6s ease",
+                  }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLImageElement).style.transform = "scale(1.06)";
+                    (e.currentTarget as HTMLImageElement).style.transform =
+                      "scale(1.06)";
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLImageElement).style.transform = "scale(1)";
+                    (e.currentTarget as HTMLImageElement).style.transform =
+                      "scale(1)";
                   }}
                 />
               </div>
@@ -167,7 +210,14 @@ export default function ProductsSection() {
               />
 
               {/* Contenido */}
-              <div style={{ padding: "28px 32px 32px", display: "flex", flexDirection: "column", flex: 1 }}>
+              <div
+                style={{
+                  padding: "28px 32px 32px",
+                  display: "flex",
+                  flexDirection: "column",
+                  flex: 1,
+                }}
+              >
                 {/* Badge categoría */}
                 <span
                   style={{
@@ -213,7 +263,14 @@ export default function ProductsSection() {
                 </p>
 
                 {/* Tags */}
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "24px" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "6px",
+                    marginBottom: "24px",
+                  }}
+                >
                   {product.brands.map((brand) => (
                     <span
                       key={brand}
@@ -253,12 +310,16 @@ export default function ProductsSection() {
                     transition: "all 0.25s",
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.background = "#ddb356";
-                    (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-1px)";
+                    (e.currentTarget as HTMLAnchorElement).style.background =
+                      "#ddb356";
+                    (e.currentTarget as HTMLAnchorElement).style.transform =
+                      "translateY(-1px)";
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.background = "#c9952a";
-                    (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
+                    (e.currentTarget as HTMLAnchorElement).style.background =
+                      "#c9952a";
+                    (e.currentTarget as HTMLAnchorElement).style.transform =
+                      "translateY(0)";
                   }}
                 >
                   {product.cta} →

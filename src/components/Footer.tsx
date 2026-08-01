@@ -15,7 +15,6 @@ export default function Footer() {
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-          
           {/* 1. Logo + copyright */}
           <div className="flex flex-col items-center lg:items-start gap-2">
             <AppLogo
@@ -34,9 +33,15 @@ export default function Footer() {
 
           {/* 2. NUEVA SECCIÓN: Horarios de Atención */}
           <div className="flex flex-col items-center gap-1 text-center">
-            <div className="flex items-center gap-2" style={{ color: "#f0c060" }}>
+            <div
+              className="flex items-center gap-2"
+              style={{ color: "#f0c060" }}
+            >
               <ClockIcon />
-              <span className="font-semibold uppercase tracking-wider" style={{ fontSize: "0.75rem" }}>
+              <span
+                className="font-semibold uppercase tracking-wider"
+                style={{ fontSize: "0.75rem" }}
+              >
                 Horarios de Atención
               </span>
             </div>
@@ -58,7 +63,8 @@ export default function Footer() {
                 className="font-semibold transition-colors duration-200"
                 style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.35)" }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = "#f0c060";
+                  (e.currentTarget as HTMLAnchorElement).style.color =
+                    "#f0c060";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLAnchorElement).style.color =
@@ -135,14 +141,14 @@ export default function Footer() {
 
 function ClockIcon() {
   return (
-    <svg 
-      width="16" 
-      height="16" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
       strokeLinejoin="round"
     >
       <circle cx="12" cy="12" r="10" />

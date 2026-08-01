@@ -13,6 +13,12 @@ export type Categoria =
   | "accesorios"
   | "higiene";
 
+export interface VarianteImagen {
+  url: string;
+  etiqueta?: string;
+  nombre?: string;
+}
+
 export interface Producto {
   id: number;
   nombre: string;
@@ -20,6 +26,7 @@ export interface Producto {
   subcategoria?: string;
   descripcion: string;
   imagen: string; // ruta relativa a /public/assets/images/
+  imagenes?: (string | VarianteImagen)[];
   destacado?: boolean;
 }
 
@@ -50,6 +57,57 @@ export function whatsappGeneral(): string {
 // ── Productos ──────────────────────────────────────────────
 export const productos: Producto[] = [
   // ALIMENTOS — PERROS
+  {
+    id: 101,
+    nombre: "Livra Equilibrio Nutricional Perros",
+    categoria: "perros",
+    subcategoria: "Nutrición Premium",
+    descripcion:
+      "Alimentación consciente formulada con pollo & cordero, arroz integral, batata, arvejas y huevo. Alta digestibilidad y salud integral.",
+    imagen: "/assets/images/livra-adultos-minis.webp",
+    imagenes: [
+      {
+        url: "/assets/images/livra-adultos-minis.webp",
+        etiqueta: "Adultos Minis y Pequeños (30% Proteína)",
+      },
+      {
+        url: "/assets/images/livra-cachorros.jpeg",
+        etiqueta: "Cachorros Todos los Tamaños (32% Proteína)",
+      },
+      {
+        url: "/assets/images/livra-adultos-medianos.webp",
+        etiqueta: "Adultos Medianos y Grandes (28% Proteína)",
+      },
+    ],
+    destacado: true,
+  },
+  {
+    id: 102,
+    nombre: "Livra Perros Adultos Minis y Pequeños",
+    categoria: "perros",
+    subcategoria: "Nutrición Premium",
+    descripcion:
+      "Nutrición balanceada 30% proteína. Pollo & cordero, arroz integral, batata, arvejas y huevo. Favorece la salud digestiva y el control de peso.",
+    imagen: "/assets/images/livra-adultos-minis.webp",
+  },
+  {
+    id: 103,
+    nombre: "Livra Perros Cachorros Todos los Tamaños",
+    categoria: "perros",
+    subcategoria: "Nutrición Premium",
+    descripcion:
+      "Fórmula 32% proteína ideal para el desarrollo óptimo del cachorro. Desarrollo cognitivo, salud digestiva y funcionalidad.",
+    imagen: "/assets/images/livra-cachorros.jpeg",
+  },
+  {
+    id: 104,
+    nombre: "Livra Perros Adultos Medianos y Grandes",
+    categoria: "perros",
+    subcategoria: "Nutrición Premium",
+    descripcion:
+      "Alimentación consciente 28% proteína. Croquetas adaptadas para razas medianas y grandes, con ingredientes de máxima calidad.",
+    imagen: "/assets/images/livra-adultos-medianos.webp",
+  },
   {
     id: 1,
     nombre: "Excellent Adultos Razas Medianas",

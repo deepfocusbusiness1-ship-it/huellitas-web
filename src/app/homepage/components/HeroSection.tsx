@@ -97,7 +97,9 @@ export default function HeroSection() {
         <div className="max-w-2xl">
           {/* Eyebrow */}
           <div className="mb-6 flex items-center gap-3">
-            <div style={{ width: "32px", height: "1px", background: "#c9952a" }} />
+            <div
+              style={{ width: "32px", height: "1px", background: "#c9952a" }}
+            />
             <span
               style={{
                 fontSize: "0.68rem",
@@ -176,12 +178,16 @@ export default function HeroSection() {
                 transition: "all 0.25s",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.background = "#ddb356";
-                (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
+                (e.currentTarget as HTMLAnchorElement).style.background =
+                  "#ddb356";
+                (e.currentTarget as HTMLAnchorElement).style.transform =
+                  "translateY(-2px)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.background = "#c9952a";
-                (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
+                (e.currentTarget as HTMLAnchorElement).style.background =
+                  "#c9952a";
+                (e.currentTarget as HTMLAnchorElement).style.transform =
+                  "translateY(0)";
               }}
             >
               {siteConfig.hero.cta.secondary}
@@ -211,12 +217,15 @@ export default function HeroSection() {
                 transition: "all 0.25s",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.5)";
+                (e.currentTarget as HTMLAnchorElement).style.borderColor =
+                  "rgba(255,255,255,0.5)";
                 (e.currentTarget as HTMLAnchorElement).style.color = "#fff";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.2)";
-                (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.75)";
+                (e.currentTarget as HTMLAnchorElement).style.borderColor =
+                  "rgba(255,255,255,0.2)";
+                (e.currentTarget as HTMLAnchorElement).style.color =
+                  "rgba(255,255,255,0.75)";
               }}
             >
               <WhatsAppIcon />

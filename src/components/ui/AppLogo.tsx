@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { memo, useMemo } from 'react';
-import AppIcon from './AppIcon';
-import AppImage from './AppImage';
+import React, { memo, useMemo } from "react";
+import AppIcon from "./AppIcon";
+import AppImage from "./AppImage";
 
 interface AppLogoProps {
   src?: string;
@@ -15,19 +15,20 @@ interface AppLogoProps {
 }
 
 const AppLogo = memo(function AppLogo({
-  src = '/assets/images/app_logo.png',
+  src = "/assets/images/app_logo.png",
   text,
-  iconName = 'SparklesIcon',
+  iconName = "SparklesIcon",
   size = 64,
-  className = '',
+  className = "",
   textStyle,
   onClick,
 }: AppLogoProps) {
   const containerClassName = useMemo(() => {
-    const classes = ['flex items-center gap-2'];
-    if (onClick) classes.push('cursor-pointer hover:opacity-80 transition-opacity');
+    const classes = ["flex items-center gap-2"];
+    if (onClick)
+      classes.push("cursor-pointer hover:opacity-80 transition-opacity");
     if (className) classes.push(className);
-    return classes.join(' ');
+    return classes.join(" ");
   }, [onClick, className]);
 
   return (
@@ -40,7 +41,7 @@ const AppLogo = memo(function AppLogo({
           height={size}
           className="flex-shrink-0"
           priority={true}
-          unoptimized={src.endsWith('.svg')}
+          unoptimized={src.endsWith(".svg")}
         />
       ) : (
         <AppIcon name={iconName} size={size} className="flex-shrink-0" />
@@ -55,6 +56,6 @@ const AppLogo = memo(function AppLogo({
   );
 });
 
-AppLogo.displayName = 'AppLogo';
+AppLogo.displayName = "AppLogo";
 
 export default AppLogo;

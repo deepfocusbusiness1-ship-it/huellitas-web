@@ -15,7 +15,7 @@ export default function CtaBanner() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -75,7 +75,9 @@ export default function CtaBanner() {
           >
             {/* Eyebrow */}
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <div style={{ width: "24px", height: "1px", background: "#c9952a" }} />
+              <div
+                style={{ width: "24px", height: "1px", background: "#c9952a" }}
+              />
               <p
                 style={{
                   fontSize: "0.65rem",
@@ -87,7 +89,9 @@ export default function CtaBanner() {
               >
                 ¿Tenés alguna consulta?
               </p>
-              <div style={{ width: "24px", height: "1px", background: "#c9952a" }} />
+              <div
+                style={{ width: "24px", height: "1px", background: "#c9952a" }}
+              />
             </div>
 
             {/* Headline */}
@@ -103,7 +107,13 @@ export default function CtaBanner() {
             >
               Tu mascota merece
               <br />
-              <span style={{ color: "#ddb356", fontStyle: "italic", fontWeight: 400 }}>
+              <span
+                style={{
+                  color: "#ddb356",
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                }}
+              >
                 lo mejor.
               </span>
             </h2>
@@ -117,7 +127,8 @@ export default function CtaBanner() {
                 fontWeight: 300,
               }}
             >
-              Escribinos y te asesoramos sin compromiso. Respondemos rápido y con gusto.
+              Escribinos y te asesoramos sin compromiso. Respondemos rápido y
+              con gusto.
             </p>
 
             {/* CTA dorado — sin verde WhatsApp */}
@@ -143,12 +154,16 @@ export default function CtaBanner() {
                 transition: "all 0.25s",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.background = "#ddb356";
-                (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
+                (e.currentTarget as HTMLAnchorElement).style.background =
+                  "#ddb356";
+                (e.currentTarget as HTMLAnchorElement).style.transform =
+                  "translateY(-2px)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.background = "#c9952a";
-                (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
+                (e.currentTarget as HTMLAnchorElement).style.background =
+                  "#c9952a";
+                (e.currentTarget as HTMLAnchorElement).style.transform =
+                  "translateY(0)";
               }}
             >
               <WhatsAppIconMed />

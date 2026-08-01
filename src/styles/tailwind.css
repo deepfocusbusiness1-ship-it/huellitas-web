@@ -1,6 +1,6 @@
 /* ─── Font Imports ─── */
 /* ⚠️ FIX: @import DEBE ir antes de las directivas @tailwind, si no las fuentes no cargan */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -11,19 +11,21 @@
   --color-primary: #0e1a14;
   --color-accent: #f0c060;
   --color-green: #4a7c59;
-  --color-wa: #25D366;
+  --color-wa: #25d366;
   --color-red: #e8523a;
   --color-cream: #f7f5f0;
   --color-white: #ffffff;
-  --font-heading: 'Fraunces', serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-heading: "Fraunces", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
   --radius-xl: 2.5rem;
   --radius-lg: 1.5rem;
   --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ─── Base Reset ─── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -41,7 +43,9 @@ body {
 }
 
 /* ─── Typography ─── */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-heading);
   letter-spacing: -0.03em;
 }
@@ -80,8 +84,12 @@ h1, h2, h3 {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes scaleIn {
@@ -104,7 +112,9 @@ h1, h2, h3 {
 
 /* ─── Reduced Motion ─── */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

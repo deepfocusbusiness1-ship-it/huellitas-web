@@ -4,19 +4,25 @@ import { productos, type Categoria } from "@/data/productos";
 import ProductCard from "@/components/ProductCard";
 import EncarguesRopa from "@/components/EncarguesRopa";
 
-const FILTROS: { valor: Categoria | "todos"; etiqueta: string; emoji: string }[] = [
-  { valor: "todos",      etiqueta: "Todos",      emoji: "🐾" },
-  { valor: "perros",     etiqueta: "Perros",     emoji: "🐶" },
-  { valor: "gatos",      etiqueta: "Gatos",      emoji: "🐱" },
-  { valor: "juguetes",   etiqueta: "Juguetes",   emoji: "🎾" },
-  { valor: "camas",      etiqueta: "Camas",      emoji: "🛏️" },
-  { valor: "ropa",       etiqueta: "Ropa",       emoji: "👕" },
+const FILTROS: {
+  valor: Categoria | "todos";
+  etiqueta: string;
+  emoji: string;
+}[] = [
+  { valor: "todos", etiqueta: "Todos", emoji: "🐾" },
+  { valor: "perros", etiqueta: "Perros", emoji: "🐶" },
+  { valor: "gatos", etiqueta: "Gatos", emoji: "🐱" },
+  { valor: "juguetes", etiqueta: "Juguetes", emoji: "🎾" },
+  { valor: "camas", etiqueta: "Camas", emoji: "🛏️" },
+  { valor: "ropa", etiqueta: "Ropa", emoji: "👕" },
   { valor: "accesorios", etiqueta: "Accesorios", emoji: "🎒" },
-  { valor: "higiene",    etiqueta: "Higiene",    emoji: "🛁" },
+  { valor: "higiene", etiqueta: "Higiene", emoji: "🛁" },
 ];
 
 export default function CatalogoPage() {
-  const [filtroActivo, setFiltroActivo] = useState<Categoria | "todos">("todos");
+  const [filtroActivo, setFiltroActivo] = useState<Categoria | "todos">(
+    "todos",
+  );
 
   const productosFiltrados =
     filtroActivo === "todos"
@@ -47,7 +53,10 @@ export default function CatalogoPage() {
       </section>
 
       {/* Filtros */}
-      <section className="sticky top-0 z-10 py-4 px-4 shadow-sm" style={{ background: "#f0ebe3" }}>
+      <section
+        className="sticky top-0 z-10 py-4 px-4 shadow-sm"
+        style={{ background: "#f0ebe3" }}
+      >
         <div className="max-w-6xl mx-auto flex flex-wrap gap-2 justify-center">
           {FILTROS.map((filtro) => {
             const activo = filtroActivo === filtro.valor;

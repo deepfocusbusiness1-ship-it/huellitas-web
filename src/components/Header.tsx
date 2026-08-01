@@ -7,7 +7,7 @@ import AppLogo from "@/components/ui/AppLogo";
 const navLinks = [
   { label: "Inicio", href: "#inicio" },
   { label: "Productos", href: "#productos" },
-  { label: "Catálogo", href: "/catalogo" },   // ← NUEVO
+  { label: "Catálogo", href: "/catalogo" }, // ← NUEVO
   { label: "Ubicación", href: "#ubicacion" },
 ];
 
@@ -58,7 +58,11 @@ export default function Header() {
             size={48}
             text="Huellitas"
             iconName="HeartIcon"
-            textStyle={{ color: "#ffffff", fontWeight: 700, fontSize: "1.1rem" }}
+            textStyle={{
+              color: "#ffffff",
+              fontWeight: 700,
+              fontSize: "1.1rem",
+            }}
           />
         </Link>
 
@@ -71,9 +75,10 @@ export default function Header() {
               className="font-semibold transition-colors duration-200"
               style={{
                 fontSize: "0.875rem",
-                color: link.label === "Catálogo"
-                  ? "#c9912a"                    // dorado para destacarlo
-                  : "rgba(255,255,255,0.65)",
+                color:
+                  link.label === "Catálogo"
+                    ? "#c9912a" // dorado para destacarlo
+                    : "rgba(255,255,255,0.65)",
                 letterSpacing: "0.02em",
               }}
               onMouseEnter={(e) => {
@@ -107,12 +112,16 @@ export default function Header() {
               boxShadow: "0 4px 16px rgba(37,211,102,0.3)",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-1px)";
-              (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 24px rgba(37,211,102,0.4)";
+              (e.currentTarget as HTMLAnchorElement).style.transform =
+                "translateY(-1px)";
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow =
+                "0 8px 24px rgba(37,211,102,0.4)";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
-              (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 16px rgba(37,211,102,0.3)";
+              (e.currentTarget as HTMLAnchorElement).style.transform =
+                "translateY(0)";
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow =
+                "0 4px 16px rgba(37,211,102,0.3)";
             }}
           >
             WhatsApp
@@ -157,14 +166,16 @@ export default function Header() {
                 href={link.href}
                 className="font-semibold px-8 py-4 transition-colors"
                 style={{
-                  color: link.label === "Catálogo"
-                    ? "#c9912a"
-                    : "rgba(255,255,255,0.7)",
+                  color:
+                    link.label === "Catálogo"
+                      ? "#c9912a"
+                      : "rgba(255,255,255,0.7)",
                   fontSize: "1rem",
                 }}
                 onClick={() => setMenuOpen(false)}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = "#f0c060";
+                  (e.currentTarget as HTMLAnchorElement).style.color =
+                    "#f0c060";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLAnchorElement).style.color =

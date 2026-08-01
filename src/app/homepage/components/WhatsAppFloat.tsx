@@ -19,7 +19,9 @@ export default function WhatsAppFloat() {
         bottom: "28px",
         right: "24px",
         opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0) scale(1)" : "translateY(20px) scale(0.8)",
+        transform: visible
+          ? "translateY(0) scale(1)"
+          : "translateY(20px) scale(0.8)",
         transition:
           "opacity 0.5s cubic-bezier(0.22,1,0.36,1), transform 0.5s cubic-bezier(0.22,1,0.36,1)",
       }}
@@ -84,7 +86,8 @@ export default function WhatsAppFloat() {
         onMouseEnter={() => setTooltip(true)}
         onMouseLeave={() => setTooltip(false)}
         onMouseDown={(e) => {
-          (e.currentTarget as HTMLAnchorElement).style.transform = "scale(0.93)";
+          (e.currentTarget as HTMLAnchorElement).style.transform =
+            "scale(0.93)";
         }}
         onMouseUp={(e) => {
           (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1)";

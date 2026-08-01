@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { whatsappProducto, type Producto } from "@/data/productos";
 
 // Paleta Huellitas
@@ -25,6 +26,34 @@ const WHATSAPP_ICON = (
 );
 
 export default function ProductCard({ producto }: ProductCardProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const listaImagenes =
+    producto.imagenes && producto.imagenes.length > 0
+      ? producto.imagenes
+      : [producto.imagen];
+
+  const currentItem = listaImagenes[currentIndex];
+  const currentUrl = typeof currentItem === "string" ? currentItem : currentItem.url;
+  const currentLabel =
+    typeof currentItem === "object"
+      ? currentItem.etiqueta || currentItem.nombre
+      : null;
+
+  const hasMultiple = listaImagenes.length > 1;
+
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setCurrentIndex((prev) => (prev === 0 ? listaImagenes.length - 1 : prev - 1));
+  };
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setCurrentIndex((prev) => (prev === listaImagenes.length - 1 ? 0 : prev + 1));
+  };
+
   return (
     <div
       className="group flex flex-col rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
@@ -34,21 +63,94 @@ export default function ProductCard({ producto }: ProductCardProps) {
         boxShadow: "0 2px 8px rgba(28,58,47,0.07)",
       }}
     >
-      {/* Imagen */}
+      {/* Imagen + Galería */}
       <div
-        className="relative w-full overflow-hidden"
-        style={{ height: "192px", background: "#f0ebe3" }}
+        className="relative w-full overflow-hidden select-none"
+        style={{ height: "220px", background: "#f0ebe3" }}
       >
         <img
-          src={producto.imagen}
+          src={currentUrl}
           alt={producto.nombre}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
 
+        {/* Flecha Izquierda */}
+        {hasMultiple && (
+          <button
+            type="button"
+            onClick={handlePrev}
+            aria-label="Imagen anterior"
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 shadow-md"
+            style={{
+              background: "rgba(28, 58, 47, 0.8)",
+              color: "#ffffff",
+              backdropFilter: "blur(4px)",
+              border: "1px solid rgba(255,255,255,0.3)",
+            }}
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+        )}
+
+        {/* Flecha Derecha */}
+        {hasMultiple && (
+          <button
+            type="button"
+            onClick={handleNext}
+            aria-label="Siguiente imagen"
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 shadow-md"
+            style={{
+              background: "rgba(28, 58, 47, 0.8)",
+              color: "#ffffff",
+              backdropFilter: "blur(4px)",
+              border: "1px solid rgba(255,255,255,0.3)",
+            }}
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        )}
+
+        {/* Indicador de Puntos (Dots) */}
+        {hasMultiple && (
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full">
+            {listaImagenes.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  e.preventDefault();
+                  setCurrentIndex(idx);
+                }}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  idx === currentIndex ? "w-4 bg-[#c9912a]" : "w-2 bg-white/60"
+                }`}
+                aria-label={`Ir a la imagen ${idx + 1}`}
+              />
+            ))}
+          </div>
+        )}
+
         {/* Badge subcategoría */}
         {producto.subcategoria && (
           <span
-            className="absolute top-3 left-3 text-xs font-bold tracking-widest px-2.5 py-1 rounded-full uppercase"
+            className="absolute top-3 left-3 text-xs font-bold tracking-widest px-2.5 py-1 rounded-full uppercase z-10"
             style={{
               background: "rgba(28,58,47,0.85)",
               color: "#c9912a",
@@ -62,7 +164,7 @@ export default function ProductCard({ producto }: ProductCardProps) {
         {/* Badge destacado */}
         {producto.destacado && (
           <span
-            className="absolute top-3 right-3 text-xs font-bold px-2.5 py-1 rounded-full"
+            className="absolute top-3 right-3 text-xs font-bold px-2.5 py-1 rounded-full z-10"
             style={{ background: "#c9912a", color: "#1c3a2f" }}
           >
             ★ Destacado
@@ -82,6 +184,16 @@ export default function ProductCard({ producto }: ProductCardProps) {
           {producto.nombre}
         </h3>
 
+        {/* Etiqueta de la variante/estilo si existe */}
+        {currentLabel && (
+          <div
+            className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-lg w-fit"
+            style={{ background: "#e6ede8", color: "#1c3a2f", border: "1px solid #c8dbc9" }}
+          >
+            <span style={{ color: "#c9912a" }}>✦</span> {currentLabel}
+          </div>
+        )}
+
         <p
           className="text-sm leading-relaxed flex-1"
           style={{ color: "#5a6e65" }}
@@ -99,7 +211,11 @@ export default function ProductCard({ producto }: ProductCardProps) {
 
         {/* Botón WhatsApp */}
         <a
-          href={whatsappProducto(producto.nombre)}
+          href={whatsappProducto(
+            currentLabel
+              ? `${producto.nombre} - ${currentLabel}`
+              : producto.nombre
+          )}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => {
@@ -123,3 +239,4 @@ export default function ProductCard({ producto }: ProductCardProps) {
     </div>
   );
 }
+
