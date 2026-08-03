@@ -57,6 +57,79 @@ export function whatsappGeneral(): string {
 
 // ── Productos ──────────────────────────────────────────────
 export const productos: Producto[] = [
+  // NOVEDADES & ACCESORIOS DE ALTA DEMANDA
+  {
+    id: 107,
+    nombre: "Comedero Ergonómico Inclinado con Acero Inoxidable",
+    categoria: "accesorios",
+    subcategoria: "Ergonomía & Salud",
+    descripcion:
+      "Comedero elevado con postura anatómica inclinada que favorece la digestión y protege el cuello. Incluye cuenco de acero inoxidable desmontable de fácil limpieza.",
+    imagen: "/assets/images/comedero-ergonomico-gato-negro.jpg",
+    imagenes: [
+      {
+        url: "/assets/images/comedero-ergonomico-gato-negro.jpg",
+        etiqueta: "Diseño Gato Negro con Manija de Colita",
+        descripcion:
+          "Cuenco de acero inoxidable inclinado en base de gato con colita ergonómica de agarre. Ideal para gatos y perros pequeños.",
+      },
+      {
+        url: "/assets/images/comedero-gato-amarillo.jpg",
+        etiqueta: "Diseño Gato Amarillo & Negro",
+        descripcion:
+          "Comederos elevados anti-reflujo con cuenco inoxidable removible. Disponibles en tonos amarillo pastel y negro brillante.",
+      },
+      {
+        url: "/assets/images/comedero-pastel-elevado.jpg",
+        etiqueta: "Modelo Pastel Elevado",
+        descripcion:
+          "Base elevada anatómica en tonos pastel suave (rosa y azul) para una postura cómoda durante la comida.",
+      },
+    ],
+    destacado: true,
+  },
+  {
+    id: 108,
+    nombre: "Moisés Nido Acolchado Estampado",
+    categoria: "camas",
+    subcategoria: "Camas & Descanso",
+    descripcion:
+      "Cama tipo nido ultra mullida con bordes de contención suaves. Relleno acolchado de alta densidad y estampados exclusivos.",
+    imagen: "/assets/images/moises-bulldog-frances.jpg",
+    imagenes: [
+      {
+        url: "/assets/images/moises-bulldog-frances.jpg",
+        etiqueta: "Edición Bulldog Francés (Violeta)",
+        descripcion:
+          "Moisés nido violeta con patrón geométrico y estampados de Bulldog Francés. Relleno suave y reconfortante.",
+      },
+      {
+        url: "/assets/images/moises-gatos-ilustrados.jpg",
+        etiqueta: "Edición Gatitos Ilustrados (Beige)",
+        descripcion:
+          "Moisés rectangular beige con ilustración de gatitos en tonos turquesa y naranja. Bordes acolchados.",
+      },
+    ],
+    destacado: true,
+  },
+  {
+    id: 109,
+    nombre: "Manta Térmica Soft Fleece Patitos",
+    categoria: "camas",
+    subcategoria: "Accesorios de Descanso",
+    descripcion:
+      "Manta de abrigo ultra suave en corderito/fleece celeste con estampado de patitos amarillos. Liviana, cálida e hipoalergénica.",
+    imagen: "/assets/images/manta-soft-fleece-patitos.jpg",
+  },
+  {
+    id: 110,
+    nombre: "Almohadón Decorativo 3D Gatito",
+    categoria: "accesorios",
+    subcategoria: "Decoración & Confort",
+    descripcion:
+      "Almohadón con impresión fotorrealista de alta definición en 3D. Relleno mullido de vellón siliconado, ideal para decorar o consentir a tu mascota.",
+    imagen: "/assets/images/almohadon-gatito-3d.jpg",
+  },
   // ALIMENTOS — PERROS
   {
     id: 106,
