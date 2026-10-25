@@ -57,6 +57,298 @@ export function whatsappGeneral(): string {
 
 // ── Productos ──────────────────────────────────────────────
 export const productos: Producto[] = [
+  // NOVEDADES OCTUBRE (TANDA 25-10)
+  {
+    id: 125,
+    nombre: "Catit Creamy – Pack surtido",
+    categoria: "gatos",
+    subcategoria: "Snacks & Premios",
+    descripcion:
+      "Snack cremoso para gatos, ideal para ofrecer como premio o complemento. Pack surtido con sabores pollo, salmón con camarones y atún.",
+    imagen: "/assets/images/catit-creamy-pack-surtido.jpg",
+  },
+  {
+    id: 126,
+    nombre: "No Va – Repelente concentrado",
+    categoria: "higiene",
+    subcategoria: "Repelentes & Educación",
+    descripcion:
+      "Repelente para perros y gatos en formato líquido concentrado. Ayuda a mantenerlos alejados de zonas no deseadas. Rinde hasta 15 litros.",
+    imagen: "/assets/images/repelente-no-va-concentrado.jpg",
+  },
+  {
+    id: 127,
+    nombre: "No Va – Repelente de interiores",
+    categoria: "higiene",
+    subcategoria: "Repelentes & Educación",
+    descripcion:
+      "Repelente en aerosol para perros y gatos, indicado para superficies y espacios interiores según las instrucciones del envase. Presentación de 350 cm³.",
+    imagen: "/assets/images/repelente-no-va-interiores.jpg",
+  },
+  {
+    id: 128,
+    nombre: "Elmer No Acá – 500 ml",
+    categoria: "higiene",
+    subcategoria: "Repelentes & Educación",
+    descripcion:
+      "Solución repelente concentrada para ayudar a evitar que las mascotas se acerquen a lugares no deseados. Presentación de 500 ml.",
+    imagen: "/assets/images/repelente-elmer-no-aca.jpg",
+  },
+  {
+    id: 129,
+    nombre: "Porta Limpia Lágrimas",
+    categoria: "higiene",
+    subcategoria: "Higiene & Cuidado",
+    descripcion:
+      "Producto para la limpieza de manchas de lágrimas en el pelaje de perros y gatos. Ideal para complementar su higiene habitual.",
+    imagen: "/assets/images/porta-limpia-lagrimas.jpg",
+  },
+  {
+    id: 130,
+    nombre: "Master Pet – Toallitas con aloe vera",
+    categoria: "higiene",
+    subcategoria: "Baño & Cuidado",
+    descripcion:
+      "Toallitas húmedas para perros y gatos, ideales para limpiar patas y lagrimales. Fórmula con aloe vera y pH neutro. Contiene 70 unidades.",
+    imagen: "/assets/images/toallitas-master-pet-aloe-vera.jpg",
+  },
+  {
+    id: 131,
+    nombre: "Cepillo masajeador diseño panda",
+    categoria: "higiene",
+    subcategoria: "Baño & Cuidado",
+    descripcion:
+      "Cepillo para el cuidado del pelaje, con puntas de masaje y un simpático diseño de panda. Práctico para incorporar a la rutina de cepillado.",
+    imagen: "/assets/images/cepillo-masajeador-panda.jpg",
+  },
+  {
+    id: 132,
+    nombre: "ModaPet – Correa retráctil 3 m",
+    categoria: "accesorios",
+    subcategoria: "Paseo & Transporte",
+    descripcion:
+      "Correa extensible de 3 metros para paseos con mayor libertad de movimiento y control. Diseño compacto con mango de agarre cómodo.",
+    imagen: "/assets/images/modapet-correa-retractil-3m.jpg",
+  },
+  {
+    id: 133,
+    nombre: "Comedero elevado con lunares",
+    categoria: "accesorios",
+    subcategoria: "Alimentación",
+    descripcion:
+      "Comedero con recipiente metálico y base elevada con patas. Diseño blanco con lunares de colores para acompañar la alimentación diaria.",
+    imagen: "/assets/images/comedero-elevado-lunares.jpg",
+  },
+  {
+    id: 134,
+    nombre: "Comedero elevado con carita",
+    categoria: "accesorios",
+    subcategoria: "Alimentación",
+    descripcion:
+      "Comedero elevado con recipiente metálico y base decorativa con carita sonriente. Una opción práctica y original para las comidas.",
+    imagen: "/assets/images/comedero-elevado-carita.jpg",
+  },
+  {
+    id: 135,
+    nombre: "Correa retráctil diseño huella 3 m",
+    categoria: "accesorios",
+    subcategoria: "Paseo & Transporte",
+    descripcion:
+      "Correa extensible de 3 metros con diseño de huella y mango ergonómico. Ideal para los paseos cotidianos con tu mascota.",
+    imagen: "/assets/images/correa-retractil-huella-3m.jpg",
+  },
+  {
+    id: 136,
+    nombre: "Bebedero portátil naranja",
+    categoria: "accesorios",
+    subcategoria: "Paseo & Transporte",
+    descripcion:
+      "Botella con recipiente integrado para ofrecer agua a tu mascota durante paseos y viajes. Con sistema de apertura y correa de transporte.",
+    imagen: "/assets/images/bebedero-portatil-naranja.jpg",
+  },
+  {
+    id: 137,
+    nombre: "Comedero con base de colores",
+    categoria: "accesorios",
+    subcategoria: "Alimentación",
+    descripcion:
+      "Recipiente metálico con soporte de colores, disponible en distintas tonalidades. Práctico para servir agua o alimento.",
+    imagen: "/assets/images/comedero-base-colores.jpg",
+  },
+  {
+    id: 138,
+    nombre: "Bolso transportador verde",
+    categoria: "accesorios",
+    subcategoria: "Paseo & Transporte",
+    descripcion:
+      "Bolso de transporte para mascotas pequeñas, con ventanas de malla para ventilación, cierre con cremallera y correas para trasladarlo.",
+    imagen: "/assets/images/bolso-transportador-verde.jpg",
+  },
+  {
+    id: 139,
+    nombre: "ModaPet – Bebedero portátil",
+    categoria: "accesorios",
+    subcategoria: "Paseo & Transporte",
+    descripcion:
+      "Bebedero para paseos y viajes, con botella y recipiente integrado. Diseño fácil de transportar, disponible en rosa y turquesa.",
+    imagen: "/assets/images/modapet-bebedero-portatil.jpg",
+  },
+  {
+    id: 140,
+    nombre: "ModaPet – Comedero con diseño de huellas",
+    categoria: "accesorios",
+    subcategoria: "Alimentación",
+    descripcion:
+      "Comedero con recipiente metálico y base decorativa con huellas. Disponible en celeste y rosa para combinar con los accesorios de tu mascota.",
+    imagen: "/assets/images/modapet-comedero-huellas.jpg",
+  },
+
+  // SEGUNDA TANDA DE PRODUCTOS (NOVEDADES)
+  {
+    id: 115,
+    nombre: "Paños sanitarios Paño Pet Max Compact",
+    categoria: "higiene",
+    subcategoria: "Higiene & Entrenamiento",
+    descripcion:
+      "Paños sanitarios educativos para mascotas. Presentación de 10 unidades de 60 × 90 cm, diseñados para absorber y retener líquidos.",
+    imagen: "/assets/images/pano-pet-max-compact.jpg",
+  },
+  {
+    id: 116,
+    nombre: "Shampoo Osspret Tradicional",
+    categoria: "higiene",
+    subcategoria: "Baño & Cuidado",
+    descripcion:
+      "Shampoo Osspret Tradicional para el cuidado e higiene de tu mascota. Presentación de 250 ml.",
+    imagen: "/assets/images/osspret-shampoo-tradicional.jpg",
+  },
+  {
+    id: 117,
+    nombre: "Shampoo Osspret Groomers Expert Belleza",
+    categoria: "higiene",
+    subcategoria: "Baño & Cuidado",
+    descripcion:
+      "Shampoo Osspret Groomers Expert Belleza para el cuidado e higiene del pelaje. Presentación de 250 ml.",
+    imagen: "/assets/images/osspret-groomers-expert-belleza.jpg",
+  },
+  {
+    id: 118,
+    nombre: "Rascador de cartón para gatos",
+    categoria: "gatos",
+    subcategoria: "Rascadores",
+    descripcion:
+      "Rascador horizontal de cartón para que tu gato pueda rascar y disfrutar de un espacio pensado para su entretenimiento cotidiano.",
+    imagen: "/assets/images/rascador-carton-gatos.jpg",
+  },
+  {
+    id: 119,
+    nombre: "Ratones de juguete para gatos",
+    categoria: "juguetes",
+    subcategoria: "Juguetes para gatos",
+    descripcion:
+      "Ratones de juguete multicolor pensados para estimular el juego y la interacción de los gatos.",
+    imagen: "/assets/images/ratones-juguete-gatos.jpg",
+  },
+  {
+    id: 120,
+    nombre: "Comedero con base elevada",
+    categoria: "accesorios",
+    subcategoria: "Alimentación",
+    descripcion:
+      "Comedero con recipiente y base elevada, disponible en diferentes colores. Una opción práctica para el espacio de alimentación de tu mascota.",
+    imagen: "/assets/images/comedero-base-elevada.jpg",
+  },
+  {
+    id: 121,
+    nombre: "Cochecito plegable para mascotas",
+    categoria: "accesorios",
+    subcategoria: "Paseo & Transporte",
+    descripcion:
+      "Cochecito para transportar a tu mascota durante paseos y traslados, con diseño plegable para facilitar su guardado.",
+    imagen: "/assets/images/cochecito-plegable-mascotas-01.jpg",
+    imagenes: [
+      {
+        url: "/assets/images/cochecito-plegable-mascotas-01.jpg",
+        etiqueta: "Vista abierta",
+      },
+      {
+        url: "/assets/images/cochecito-plegable-mascotas-02.jpg",
+        etiqueta: "Vista plegada",
+      },
+    ],
+  },
+  {
+    id: 122,
+    nombre: "Bolso transportador para mascotas",
+    categoria: "accesorios",
+    subcategoria: "Paseo & Transporte",
+    descripcion:
+      "Bolso transportador para acompañar a tu mascota durante paseos y traslados. Diseño estampado con correa para transporte.",
+    imagen: "/assets/images/bolso-transportador-mascotas-01.jpg",
+    imagenes: [
+      "/assets/images/bolso-transportador-mascotas-01.jpg",
+      "/assets/images/bolso-transportador-mascotas-02.jpg",
+    ],
+  },
+  {
+    id: 123,
+    nombre: "Comedero plástico para mascotas",
+    categoria: "accesorios",
+    subcategoria: "Alimentación",
+    descripcion:
+      "Comedero para mascotas disponible en diferentes colores, pensado para el uso cotidiano con alimento o agua.",
+    imagen: "/assets/images/comedero-plastico-mascotas.jpg",
+  },
+  {
+    id: 124,
+    nombre: "InterPets Suspensión 15 ml",
+    categoria: "higiene",
+    subcategoria: "Cuidado veterinario",
+    descripcion:
+      "Antiparasitario interno de uso veterinario para caninos y felinos en suspensión oral. Presentación de 15 ml.",
+    imagen: "/assets/images/interpets-suspension-15ml.jpg",
+  },
+  // NOVEDADES RECIENTES (TANDA 1)
+  {
+    id: 111,
+    nombre: "Rascador de pared para gatos",
+    categoria: "gatos",
+    subcategoria: "Rascadores",
+    descripcion:
+      "Rascador de pared pensado para que tu gato pueda rascar, estirarse y disfrutar de su espacio sin ocupar lugar en el piso. Su diseño con forma de gato también suma un detalle decorativo al ambiente.",
+    imagen: "/assets/images/rascador-pared-gato.jpg",
+  },
+  {
+    id: 112,
+    nombre: "Cochecito para mascotas",
+    categoria: "accesorios",
+    subcategoria: "Paseo & Transporte",
+    descripcion:
+      "Una opción cómoda y práctica para salir de paseo con tu mascota. Su diseño permite transportarla de forma protegida y mantenerla cerca durante el recorrido.",
+    imagen: "/assets/images/cochecito-mascotas-01.jpg",
+    imagenes: [
+      "/assets/images/cochecito-mascotas-01.jpg",
+      "/assets/images/cochecito-mascotas-02.jpg",
+    ],
+  },
+  {
+    id: 113,
+    nombre: "Rampa regulable con rascador",
+    categoria: "accesorios",
+    subcategoria: "Movilidad & Bienestar",
+    descripcion:
+      "Rampa regulable para mascotas con superficie que también puede utilizarse como rascador. Permite adaptar la inclinación y ofrece una superficie de apoyo durante el ascenso y descenso.",
+    imagen: "/assets/images/rampa-regulable-rascador.jpg",
+  },
+  {
+    id: 114,
+    nombre: "Mochila transportadora para mascotas",
+    categoria: "accesorios",
+    subcategoria: "Paseo & Transporte",
+    descripcion:
+      "Transportadora tipo mochila para llevar a tu mascota de manera práctica durante paseos y traslados. Diseño celeste con estampado de ositos.",
+    imagen: "/assets/images/mochila-transportadora-ositos.jpg",
+  },
   // NOVEDADES & ACCESORIOS DE ALTA DEMANDA
   {
     id: 107,
